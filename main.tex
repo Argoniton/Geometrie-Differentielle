@@ -1,0 +1,137 @@
+% !TEX encoding = UTF-8 Unicode
+\documentclass[french]{article}
+ 
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{babel}
+
+\usepackage{amsthm}
+\usepackage{thmtools}
+\usepackage{mathtools}
+
+ 
+\theoremstyle{definition}
+\newtheorem{definition}{Définition}[section]
+
+\theoremstyle{theorem}
+\newtheorem{theorem}{Theorem}[section]
+
+\theoremstyle{proposition}
+\newtheorem{proposition}{Proposition}[section]
+
+\theoremstyle{lemme}
+\newtheorem{lemme}{Lemme}[section]
+
+
+
+\DeclareMathOperator{\tg}{tg}
+\DeclareMathOperator{\ctg}{ctg}
+\DeclareMathOperator{\dist}{dist}
+
+
+ 
+\begin{document}
+ 
+\tableofcontents
+ 
+% \vspace{2cm} %Add a 2cm space
+ 
+\begin{abstract}
+Plan:
+\begin{enumerate}
+\item Courbes (plan + espace)
+\begin{itemize}
+\item étude local
+\item étude global
+\end{itemize}
+\item surfaces dans $R^3$
+\end{enumerate}\end{abstract}
+ 
+\section{Courbes}
+
+\emph{Lesson 1}
+
+% definition of a curve and regular curve
+\theoremstyle{definition}
+\begin{definition}{Courbe et Courbe Régulière}
+\begin{enumerate}
+\item Une courbe paramètre dans $R^3$ est une function $c:I\rightarrow R^n$ où $I$ est un intervalle de $R$ et $c$ est lisse = infiniment différentielle ($C^\infty$).
+$$I\ni t\mapsto c(t)\in R^3,$$
+$t$ -- paramètre.
+\item Une courbe paramétrée est régulièrement si
+$$\dot{c}(t) = \frac{d}{dt}c(t)\neq 0,$$
+pour tout $t\in I$.
+\end{enumerate}
+\end{definition}
+
+Si une courbe est régulière, $c(t)\neq const$. $\dot{c}(t)$ ¡diuge la tangente à la courbe en $c(t)$.
+
+Chaque régulière courbe est tangente à la ligne.
+
+\begin{definition} La trace d'une courbe paramètre $I\ni t \mapsto c(t)\in R^n$ est image:
+$$\{c(t)\ |\ t\in I\} \subset R^n.$$
+\end{definition}
+
+Une cure paramètre est plus une sa trace.
+
+La courbe $$R\ni t \mapsto \left( \begin{array}{c} t^3 \\ 0 \end{array} \right) \in R^2,$$ 
+$trace = \{ \left( \begin{array}{c} x \\ 0 \end{array} \right)\ |\ x\in R \}$. Et la courbe $$R\ni t \mapsto \left( \begin{array}{c} t \\ 0 \end{array} \right) \in R^2$$ a la même trace!
+
+$$ \dot{c}_1(t) = \left( \begin{array}{c} 3t^2 \\ 0 \end{array} \right),\ mais\ \dot{c}_2(t) = \left( \begin{array}{c} 1 \\ 0 \end{array} \right).$$
+
+\begin{definition} Si $I\ni t \mapsto c(t)\in R$ est une courbe paramètre, $J\subset R$ -- une intervalle et $\varphi: J\rightarrow I$ une function lisse t.q. $\varphi^{-1}: J\rightarrow I$ est également lisse, on disque(?):
+$$J\ni t \mapsto c^2(t) = c\circ\varphi(t) \in R^n,$$
+est une reparametrisation  de  $c$.
+\end{definition}
+
+Remarque:  
+$\dot{\tilde{c}}(t)=\dot{c}\circ\varphi(t)*\dot{\varphi}(t)$. Donc,
+$\tilde{c}$ - régulière $\Longleftrightarrow$ $c$ est régulière.
+$$\frac{d}{ds}\varphi^{-1}(s)=\frac{1}{\dot{\varphi}\circ\varphi^{-1}(s)}\neq 0$$
+
+$\varphi: J\rightarrow I$ est un diffeomprphisme comme $\dot{\varphi}\neq0$, on a
+
+$$\left\{\begin{array}{rl}
+\mbox{soit}\ \dot{\varphi}(t)>0, & \mbox{pour tout } t\in J \\ 
+\mbox{soit}\ \dot{\varphi}(t)<0, & \mbox{pour tout } t\in J 
+\end{array}\right.,$$
+
+$$\left\{\begin{array}{rl}
+\varphi\mbox{ est } \nearrow \\ 
+\varphi\mbox{ est } \searrow
+\end{array}\right..$$
+
+Si $\varphi$ est $\nearrow$ on dit une la reparametrisation conserve le sens de parcours (l'orientation).
+Si $\varphi$ est $\searrow$, la reparam inverse le sens de parours.
+
+\begin{definition}
+\begin{enumerate}
+\item Une courbe est une classe d'equivalence de courbes parametrie pour la selation:
+$$c\sim \tilde{c}\Longleftrightarrow\tilde{c}\mbox{ est une reparemetrisation de }c$$
+\item Une courbe on entee est une classe d'equivalence des courbes parametrie pour:
+$$c\sim \tilde{c}\Longleftrightarrow\tilde{c}\mbox{ est une reparemetrisation puservantle sense le parours de }c$$
+\end{enumerate}
+\end{definition}
+
+\begin{definition}
+Si $c$ est une courbe paramètre t.q. $|\dot{c}(t)|=1$ pour tout $t\in I$. On dit que c'est paramitee pur sa louger d'arc.
+\end{definition}
+
+\begin{proposition}
+Si $I\ni t\mapsto c(t)\in R^n$ est une courbe param reguliere il existe une reparametrisation de $c$ par ca long d'arc:
+$$J\ni s\mapsto \tilde{c}(s)=c\circ\varphi(s)\in R^n$$
+$$|\dot{\tilde{c}}(s)|=1 \mbox{ pour tout } s\in J.$$
+\end{proposition}
+
+\begin{lemme}
+Si $
+\begin{array}{rl} 
+J_1\ni s \mapsto \tilde{c_1}(s)\mbox{, et }\\ 
+J_2\ni s \mapsto \tilde{c_2}(s)
+\end{array} $
+sont 2 parametr de par long d'arc de la meme courbe $|\dot{c_1}(s)| = 1 = |\dot{c_2}(s)|$.
+alors $c_2(s)=c_1(s_0\pm s)$, pour un $s_0\in R$ et si $c_1$ et $c_2$ ont un pos le meme suis de parcours. Si $c:[a,\ b]\rightarrow R^n$ est une courbe parametre sa longen est:
+$$ L[c] = \int_{a}^{b} |\dot{c}(t)| dt$$
+$$l =\int_{0}^{t} |\dot{c}(u)| du = t$$ % is a curve length from point u(0) to u(t), it equals t. There is just a single param like that up to a constant.
+\end{lemme}
+\end{document}
