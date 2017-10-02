@@ -1,41 +1,6 @@
-% !TEX encoding = UTF-8 Unicode
-\documentclass[french]{article}
- 
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{babel}
-
-\usepackage{amsthm}
-\usepackage{thmtools}
-\usepackage{mathtools}
-
- 
-\theoremstyle{definition}
-\newtheorem{definition}{Définition}[section]
-
-\theoremstyle{theorem}
-\newtheorem{theorem}{Theorem}[section]
-
-\theoremstyle{proposition}
-\newtheorem{proposition}{Proposition}[section]
-
-\theoremstyle{lemme}
-\newtheorem{lemme}{Lemme}[section]
-
-
-
-\DeclareMathOperator{\tg}{tg}
-\DeclareMathOperator{\ctg}{ctg}
-\DeclareMathOperator{\dist}{dist}
-
-
- 
-\begin{document}
- 
 \tableofcontents
- 
 % \vspace{2cm} %Add a 2cm space
- 
+
 \begin{abstract}
 Plan:
 \begin{enumerate}
@@ -44,7 +9,7 @@ Plan:
 \item étude local
 \item étude global
 \end{itemize}
-\item surfaces dans $R^3$
+\item surfaces dans $\mathbb{R}^3$
 \end{enumerate}\end{abstract}
  
 \section{Courbes}
@@ -55,11 +20,11 @@ Plan:
 \theoremstyle{definition}
 \begin{definition}{Courbe et Courbe Régulière}
 \begin{enumerate}
-\item Une courbe paramètre dans $R^3$ est une function $c:I\rightarrow R^n$ où $I$ est un intervalle de $R$ et $c$ est lisse = infiniment différentielle ($C^\infty$).
-$$I\ni t\mapsto c(t)\in R^3,$$
+\item Une courbe paramètre dans $\mathbb{R}^3$ est une function $c:I\rightarrow \mathbb{R}^n$ où $I$ est un intervalle de $\mathbb{R}$ et $c$ est lisse ($c$ est infiniment différentielle, $ c \in C^\infty$).
+$$I\ni t\mapsto c(t)\in \mathbb{R}^3,$$
 $t$ -- paramètre.
 \item Une courbe paramétrée est régulièrement si
-$$\dot{c}(t) = \frac{d}{dt}c(t)\neq 0,$$
+$$\dot{c}(t) = \frac{\diff}{\diff t}c(t)\neq 0,$$
 pour tout $t\in I$.
 \end{enumerate}
 \end{definition}
@@ -68,19 +33,19 @@ Si une courbe est régulière, $c(t)\neq const$. $\dot{c}(t)$ ¡diuge la tangent
 
 Chaque régulière courbe est tangente à la ligne.
 
-\begin{definition} La trace d'une courbe paramètre $I\ni t \mapsto c(t)\in R^n$ est image:
-$$\{c(t)\ |\ t\in I\} \subset R^n.$$
+\begin{definition} La trace d'une courbe paramètre $I\ni t \mapsto c(t)\in \mathbb{R}^n$ est image:
+$$\{c(t)\ |\ t\in I\} \subset \mathbb{R}^n.$$
 \end{definition}
 
 Une cure paramètre est plus une sa trace.
 
-La courbe $$R\ni t \mapsto \left( \begin{array}{c} t^3 \\ 0 \end{array} \right) \in R^2,$$ 
-$trace = \{ \left( \begin{array}{c} x \\ 0 \end{array} \right)\ |\ x\in R \}$. Et la courbe $$R\ni t \mapsto \left( \begin{array}{c} t \\ 0 \end{array} \right) \in R^2$$ a la même trace!
+La courbe $$R\ni t \mapsto \left( \begin{array}{c} t^3 \\ 0 \end{array} \right) \in \mathbb{R}^2,$$ 
+$trace = \{ \left( \begin{array}{c} x \\ 0 \end{array} \right)\ |\ x\in \mathbb{R} \}$. Et la courbe $$R\ni t \mapsto \left( \begin{array}{c} t \\ 0 \end{array} \right) \in \mathbb{R}^2$$ a la même trace!
 
 $$ \dot{c}_1(t) = \left( \begin{array}{c} 3t^2 \\ 0 \end{array} \right),\ mais\ \dot{c}_2(t) = \left( \begin{array}{c} 1 \\ 0 \end{array} \right).$$
 
-\begin{definition} Si $I\ni t \mapsto c(t)\in R$ est une courbe paramètre, $J\subset R$ -- une intervalle et $\varphi: J\rightarrow I$ une function lisse t.q. $\varphi^{-1}: J\rightarrow I$ est également lisse, on disque(?):
-$$J\ni t \mapsto c^2(t) = c\circ\varphi(t) \in R^n,$$
+\begin{definition} Si $I\ni t \mapsto c(t)\in \mathbb{R}$ est une courbe paramètre, $J\subset \mathbb{R}$ -- une intervalle et $\varphi: J\rightarrow I$ une function lisse t.q. $\varphi^{-1}: J\rightarrow I$ est également lisse, on disque(?):
+$$J\ni t \mapsto c^2(t) = c\circ\varphi(t) \in \mathbb{R}^n,$$
 est une reparametrisation  de  $c$.
 \end{definition}
 
@@ -118,8 +83,8 @@ Si $c$ est une courbe paramètre t.q. $|\dot{c}(t)|=1$ pour tout $t\in I$. On di
 \end{definition}
 
 \begin{proposition}
-Si $I\ni t\mapsto c(t)\in R^n$ est une courbe param reguliere il existe une reparametrisation de $c$ par ca long d'arc:
-$$J\ni s\mapsto \tilde{c}(s)=c\circ\varphi(s)\in R^n$$
+Si $I\ni t\mapsto c(t)\in \mathbb{R}^n$ est une courbe param reguliere il existe une reparametrisation de $c$ par ca long d'arc:
+$$J\ni s\mapsto \tilde{c}(s)=c\circ\varphi(s)\in \mathbb{R}^n$$
 $$|\dot{\tilde{c}}(s)|=1 \mbox{ pour tout } s\in J.$$
 \end{proposition}
 
@@ -130,8 +95,79 @@ J_1\ni s \mapsto \tilde{c_1}(s)\mbox{, et }\\
 J_2\ni s \mapsto \tilde{c_2}(s)
 \end{array} $
 sont 2 parametr de par long d'arc de la meme courbe $|\dot{c_1}(s)| = 1 = |\dot{c_2}(s)|$.
-alors $c_2(s)=c_1(s_0\pm s)$, pour un $s_0\in R$ et si $c_1$ et $c_2$ ont un pos le meme suis de parcours. Si $c:[a,\ b]\rightarrow R^n$ est une courbe parametre sa longen est:
-$$ L[c] = \int_{a}^{b} |\dot{c}(t)| dt$$
-$$l =\int_{0}^{t} |\dot{c}(u)| du = t$$ % is a curve length from point u(0) to u(t), it equals t. There is just a single param like that up to a constant.
+alors $c_2(s)=c_1(s_0\pm s)$, pour un $s_0\in \mathbb{R}$ et si $c_1$ et $c_2$ ont un pos le meme suis de parcours. Si $c:[a,\ b]\rightarrow \mathbb{R}^n$ est une courbe parametre sa longen est:
+$$ L[c] = \int_{a}^{b} |\dot{c}(t)|\, \diff t$$
+$$l =\int_{0}^{t} |\dot{c}(u)|\mathop{\dif u} = t$$ % is a curve length from point u(0) to u(t), it equals t. There is just a single param like that up to a constant.
 \end{lemme}
-\end{document}
+
+\section{Lesson 2} % (fold)
+\label{sec:lesson_2}
+
+% section lesson_2 (end)
+
+\begin{definition}
+	Une courbe paramétrie $c:R\rightarrow R^d$ est appelie \textsc{Periodique} de periode $p$, si $c(t+p)=c(t),\ \forall t\in R$.
+\end{definition}
+
+\begin{definition}
+	Une courbe fermee et appeler une \textsc{Courbe Fermee Simple} s'il existe une parametrisation reguliere, periodique de periode $p$ et si: $c_{[0, p)}$ est injectif.
+\end{definition}
+
+\begin{definition}
+	$c\in C^\infty(I,\ R^2)$ est applee \textsc{Courbe Plane}.
+\end{definition}
+
+\begin{definition}
+	Soit $c$ une courbe parametree par longueur d'arc (donc une courbe de vitess 1) (donc $||\dot{c}(t)||=1$). Son hamps normale est definie par:
+	$$N(T):=\dot{c}^\perp(t),\ t\in I$$
+\end{definition}
+
+\begin{remark}
+$N(t)=\left(\begin{array}{cr} 0 & -1 \\ 1 & 0\end{array}\right)\dot{c}(t)$. $N$ depend de l'orientation de la courbe.
+\end{remark}
+
+Pour chaquet lestome ${\dot{c},\ N(t)}$ est un base otrthonormee direct de $R^2$.
+
+\begin{lemme}
+	Soite une courbe vitesse 1, $N$ son alors $\ddot{c}(t)$ est parallier a $N(t)$.
+\end{lemme}
+\begin{proof}
+	Idee $||\dot{c}(t)||=1,\ \forall t \Longleftrightarrow \ddot{c}(t)\perp\dot{c}(t)$.
+\end{proof}
+
+\begin{definition}
+	Soit $c\in C^\infty(I,\ R^2)$ une courbe plane de vitesse 1, alors $\ddot{c}(t)=\varkappa(t)N(t)$, avec $\varkappa(t):=<\ddot{c}(t),\ N(t)>$.
+	$\varkappa(t)$ - scalar.
+	
+	Alors $\varkappa\in C^\infty (I,\ R)$ et $\varkappa$ est appele la courbe dec?? ($\varkappa(t)$ la courbe du point $c(t)$)
+\end{definition}
+
+\begin{theorem}{Formulles de Fenet}
+	Soit $c\in C^\infty(I,\ R^2)$ une courbe de vitesse 1.
+	
+	Soit $\begin{array}{c}T(t):=\dot{c}(t),\\ N(t):=T^\perp (t) \end{array}$, $\{T(t),\ N(t)\}$ - le systeme ortogonale vecteur. Est appeli le \textsc{reppere de Frenet}, ou \textsc{Base de Frenet}. \textsc{Formules de Frenet}:
+	$$\begin{array}{c}\dot{T}(t)=\varkappa(t)N(t)\\ \dot{N}(t)=-\varkappa(t)T(T)\end{array}$$
+\end{theorem}
+
+\begin{remark}
+	$$\frac{\diff}{\diff\, t}\left(
+	\begin{array}{c}
+		T\\N\end{array}\right) = \left(\begin{array}{rc}0 & \varkappa\\
+		-\varkappa & 0
+	\end{array}
+	\right)=\left(\begin{array}{c}T\\N\end{array}\right)$$
+\end{remark}
+
+\begin{lemme}
+	Soit $c:C^\infty([a,\ b],\ R^2)$ une courbe plane devitesse, alors il existe $\nu\in C^\infty([a,\ b],\ R)$ t.q. $\dot{c}(t)=(\cos\nu(t),\ \sin\nu(t))$
+\end{lemme}
+
+\begin{definition}
+	Soit $c\in C^\infty(R,\ R^2)$ une courbe plane, periodique comenode L et de vitesse 1. (en partiquliere reguliere). Soit $\nu\in C^\infty(R,\ R)$.
+	Telque $\dot{c}(t)=(\cos \nu (t),\ \sin\nu(t))$ (an dit: une angle de la tangente).
+	
+	On define le nobn de rotation de la tangente de $c$: $n_c=\frac{1}{2\pi}(\nu(c)-\nu(o))$
+\end{definition}
+% from $... R^3 ...$ to $... \mathbb{R}^3 ...$ 
+% find: \$([^\n\$]*)R([^\n\$]*)\$
+% replace: $$1\mathbb{R}$2$
