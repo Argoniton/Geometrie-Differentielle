@@ -24,7 +24,7 @@ Plan:
 $$I\ni t\mapsto c(t)\in \mathbb{R}^3,$$
 $t$ -- paramètre.
 \item Une courbe paramétrée est régulièrement si
-$$\dot{c}(t) = \frac{\diff}{\diff t}c(t)\neq 0,$$
+$$\dot{c}(t) = \frak{\diff}{\diff t}c(t)\neq 0,$$
 pour tout $t\in I$.
 \end{enumerate}
 \end{definition}
@@ -52,7 +52,7 @@ est une reparametrisation  de  $c$.
 Remarque:  
 $\dot{\tilde{c}}(t)=\dot{c}\circ\varphi(t)*\dot{\varphi}(t)$. Donc,
 $\tilde{c}$ - régulière $\Longleftrightarrow$ $c$ est régulière.
-$$\frac{d}{ds}\varphi^{-1}(s)=\frac{1}{\dot{\varphi}\circ\varphi^{-1}(s)}\neq 0$$
+$$\frak{d}{ds}\varphi^{-1}(s)=\frak{1}{\dot{\varphi}\circ\varphi^{-1}(s)}\neq 0$$
 
 $\varphi: J\rightarrow I$ est un diffeomprphisme comme $\dot{\varphi}\neq0$, on a
 
@@ -150,7 +150,7 @@ Pour chaquet lestome ${\dot{c},\ N(t)}$ est un base otrthonormee direct de $R^2$
 \end{theorem}
 
 \begin{remark}
-	$$\frac{\diff}{\diff\, t}\left(
+	$$\frak{\diff}{\diff\, t}\left(
 	\begin{array}{c}
 		T\\N\end{array}\right) = \left(\begin{array}{rc}0 & \varkappa\\
 		-\varkappa & 0
@@ -166,8 +166,190 @@ Pour chaquet lestome ${\dot{c},\ N(t)}$ est un base otrthonormee direct de $R^2$
 	Soit $c\in C^\infty(R,\ R^2)$ une courbe plane, periodique comenode L et de vitesse 1. (en partiquliere reguliere). Soit $\nu\in C^\infty(R,\ R)$.
 	Telque $\dot{c}(t)=(\cos \nu (t),\ \sin\nu(t))$ (an dit: une angle de la tangente).
 	
-	On define le nobn de rotation de la tangente de $c$: $n_c=\frac{1}{2\pi}(\nu(c)-\nu(o))$
+	On define le nobn de rotation de la tangente de $c$: $n_c=\frak{1}{2\pi}(\nu(c)-\nu(o))$
 \end{definition}
 % from $... R^3 ...$ to $... \mathbb{R}^3 ...$ 
 % find: \$([^\n\$]*)R([^\n\$]*)\$
 % replace: $$1\mathbb{R}$2$
+
+\underline{Rappel} $c\in C^\infty(I; \R^2)$ reguliere. Alors $\exists\nu\in C^\infty (I; )$ t.q. $\dot{c}(t)=(\cos \nu(t), \sin\nu(t))$. On definie le \textsc{Nombre de Rotation de la Tangente} pour une courbe periodique de periode $L$:
+	$$n_c:=\frak{1}{2\pi}(\nu (L)-\nu(0))$$
+	
+\begin{lemme}
+	Soient $c_1, c_2\in C^\infty (\R; \R^2)$ deux courbes périodiques de periode $L$, paramétrie par longueur d'arc $S$: $c_1=c_2\circ\varphi$ avec $\varphi>0 $ alors:
+	$$n_{c_1}=n_{c_2}$$
+	Si $\dot{\phi}<0$ alors
+	$$n_{c_1}=-n_{c_2}$$
+\end{lemme}
+\begin{remark}
+	Le nombre de rotation de la tangente est donc invariant par rapport à une reparatrrisation que preserve l'orientation.
+\end{remark}
+\begin{proof}
+	On avaait vu que $\phi(t)=\pm t+t_0$ donc $\dot{\phi}>0$ $=>$ $\phi (t)=t+t_0$. Soit $\nu_2$ t.q. $\dot{c}_2(t)=(\cos\nu_2(t), \sin\nu_2(t))$ alors pour $\nu_1:=\nu_2\circ\phi$ on a que $\dot{c}_1(t)=(\cos\nu_1(t), \sin\nu(_1t))$. Soit $\bar{\nu}_1(t):=\nu_1(t+L)$ on a que $\dot{c}(t)=(\cos\bar{\nu}_1(t), \sin\bar{\nu}(_1t))$ car $c_1(t)=c_1(t+L)$.
+	\begin{align}
+		2\pi(n_{c_2}-n_{c_1}) & = (\nu_2(L)-\nu_2(0))-(\nu_1(L)-\nu_1(0))
+				& =(\nu_2(L-t_0)-\nu_2(-t_0)) - (\nu_1(L)-\nu_1(0))
+				& = ...
+				=0
+	\end{align}
+\end{proof}
+
+\begin{theorem}
+	Sait $c$ une courbe plane périodique de période $L$ et paramétrie par longueur d;arc. Soit $\kappa$ la courbure de $c$ alors
+		$$n_c=\frak{1}{2\pi}\int_0^L\kappa(t)\dd{t}$$
+\end{theorem}
+\begin{remark}
+	En particulier $\int\limits_0^L\kappa(t)\dd{t}\in 2\pi\mathbb{Z}$
+\end{remark}
+\begin{proof}
+	Soit $\nu\in C^\infty(\R, \R)$ une fonction angle pour la tangente, c.à.d.$\dot{c}(t)=(\cos \nu(t), \sin\nu(t))$. $\ddot{c}(t)=\kappa(t)\dot{c}^\perp (t)$ donc $\kappa(t)=<\ddot{c}(t), \dot{c}^\perp (t)>$ ou $\ddot{c}(t)=\dot{\nu}(t)(-\sin\nu(t), \cos\nu(t))$ et $\dot{c}^\perp(t)=(-\sin\nu(t),\cos\nu(t))$
+	donc $<\ddot{c}(t), \dot{c}^\perp(t)>=\dot{\nu}(t)=\kappa(t)$ ou
+	$$n_c = \frak{1}{2\pi}(\nu(L)-\nu(0))=\frak{1}{2\pi}\int_0^L \dot{\nu}(t)\dd{t}=\frak{1}{2\pi}\int_0^L\kappa(t)\dd{t}.$$
+\end{proof}
+
+\begin{theorem}{Hopf. Turning tangent theorem}
+	Une courbe plane fermée simple a un nombre de rotation (de la tangente) 1 ou $-1$.
+\end{theorem}
+
+Nombre de rotation $n=\frac{1}{2\pi}\int\limits_0^L\kappa(t)\dd{t}=\frac{1}{2\pi}(\nu(L)-\nu(0))$. $c(t+l)=c(t)$ $c(t)=(\cos \nu (t), \sin \nu(t)),\ \dot\nu=\kappa$
+\begin{remark}
+	On avait includans la definli de fermée simple qu'il n'ya pas de point singulier.
+\end{remark}
+	
+Pour la preuve on auia besoin du lemme de recouriement.
+
+\begin{definition}
+	Sait $X\subset \R^d$ et $x_0\in X$ On dit que $X$ est \textsc{Étoile} par rapport à $x_0$, ($X$ is star shaped). Si pour chaque $x\in X$ le segnent de droite entre $x_0$ et $x$ est coutenu dans $X$. C'est dire $\forall x$ $\{x_0{1-t}+xt, t\in[0,1]\}\subset X$
+\end{definition}
+
+\begin{lemme}{De Recouvrement}
+	Soit $X\subset \R^d$ éteilé par rapport à $x_0$ et soit
+	$$e: X\rightarrow S^1=\{(x,y)\in\R^2, x^2+y^2=1\} \text{ -- une applicationcontinne}$$
+	
+	Alors in existe une appliation \underline{continue} $\nu: X\rightarrow \R$ t.q. $e(x)=(\cos\nu(x), \sin\nu(x))$. $\nu$ est unique sous la condition $\nu(x_0)=\nu_0$.
+\end{lemme}
+
+\begin{proof}
+	\underline{Cas} ou $e: X\rightarrow S^1$ n'est pas surjective. Supposons qu'il existe $\phi_0\in \R$ t.q. $(\cos\phi_0, \sin\phi_0)\notin e(X)$. $e(X)=\{z; z=e(x), x\in X\}$.
+	La fonction $\psi:(\phi_0, \phi_0+2\pi)\rightarrow S^1\\\{(\cos\phi_0, \sin\phi_2\}$ est un homeomorphisme.
+	On $\nu=\psi^{-1}\circ e$ donc $\nu$ est continne.
+	
+	\underline{Cas} $e(X)=S^1$. Dans le cas $d=1$, $X=[0,1]$, $x_0=0$ on a demontré le théoréme ($e=\dot{c}$ denvee d'une courbe) %img 4planes
+	
+	\underline{Cas} $d>1$. Soit $x\in X$. On defini $e_x:[0,1]\rightarrow S^1$, $e(x)(t)=e(tx+(1-t)x_0)$. %img a star
+	On sait qu'il existe $\nu_x:[0,1]\rightarrow \R$ continue t.q. $e_x(t)=(\cos\nu_x(t),\sin\nu_x(t))$ de $\nu_x(t)=\nu(tx+(1-t)x_0)$ donc $\nu(x)=\nu_x(1)$ donc
+	$e(x)=e_x(1)=(\cos\nu_x(1), \sin\nu_x(1))$ is est e a de monte que $\nu_x(1)$ est continue en $e$.
+	
+	Soit $\eps>0$ et $0=t_0<t_1<t_2<...<t_n=1$ une partition t.q. $e_x|_{[t_j, t_{j+1}]}\subset U_h,\ H\in\{1,2,3,4\}$. Soit $y$ t.q. $\norm{e_x(t)-e_y(t)}<\eps,\ \forall t\in [0,1]$. Si $\eps$ est sufficiont petit. $e_y|_{[t_j, t_{j+1})}\subset U_h$. Par example dans le cas $h=4$ on aura
+	\begin{align}
+		\nu_x(t) &=\arctan\left(\frak{e_x^2(t)}{e_x^1(t)}\right)
+		\nu_y(t) &=\arctan\left(\frak{e_y^2(t)}{e_y^1(t)}\right)		
+	\end{align}
+	$e=(e^1, e^2)$
+\end{proof}
+
+\begin{proof}{du théoréme de Hopf}
+	%%img kidney
+	Soit $c$ une une paramétrisation de vitesse 1 de periode $L$. Sait $x_0:=\max\{c^1(t); t\in [0, l]\}$. Soit $p=\{(z_1, z_2); z_1=x_0\}\cap C(\R)$
+	Soit la parametrisation t.q. $c(0)=p$. $G=p+\R(1,0)$. $C(\R)\cap G$ est à gauche de $p$.
+	Soit $X=\{(t_1, t_2): 0\leq t_1\leq t_2 \leq L\}$ %img trin
+	$X$ est éteilé par rapport à $(0,0)$. On considere $c:X\rightarrow S^1$
+	Formula after an image.
+	$$c(t_1,t_2)=\left\{ \begin{array}{cr}\frac{c(t_1)-c(t_1)}{||c(t_1)-c(t_1)||} & t_2>t_1 \\ \dot c(t) & t_2=t_1=t \\ -\dot c(0) & (t_1, t_2)=(0,L)\end{array}\right.$$
+	
+	Alors $e\in C^0(x, S^1)$, en effet $c\in C^\infty.$ $c(t_2)=c(t_1)+\dot c(t_1)(t_2-t_1)+o(|t_2-t_1|)$
+	
+	$$\frac{c(t_1)-c(t_1)}{||c(t_1)-c(t_1)||}=\frac{(t_2-t_1)(\dot c(t_1)-o(1))}{||(t_2-t_1)(\dot c(t_1)-o(1))||}\to \frac{\dot c(t_1)}{||\dot c(t_1)||}=\dot c(t_1)$$
+	$$t_2\to t_1$$
+	$$\frac{c(L-\eps)-c(0)}{||c(L-\eps)-c(0)||}=\frac{c(-\eps)-c(0)}{c(-\eps)-c(0)}=\frac{-\eps(\dot c(0)+o(1))}{||-\eps(\dot c(0)+o(1))||}\to -\dot c(0)$$
+	$$\eps\to(down) +0+$$
+	
+	De plus X est estèoilèe par rapport à $(0,0)$. Donc il exist $\nu\in C^0(X)$ t.q. $e(t_1, t_2)=(\cos \nu(t_1,t_2), \sin \nu(t_1,t_2))$. Pour de nombre de rotation de ( la tangente de) on a:
+	$$2\pi n_c=\nu(L,L)-\nu(0,0)=\nu(L,L) - \nu(0,L)+\nu(0,L)-\nu(0,0)$$
+	
+	%img nut.ai
+	
+	(droite $\perp$ à $\dot c(0)$) $x_0=\max \{ c^{(1)},\ t\in [0, L]\}$ $(1,0)\not\in im([0,1]\ni t\mapsto e(0,t))$ car en $c(0), t\mapsto x(t)$ est maximal, donc $im([0,1]\ni t\mapsto \nu(0,t))\subset (0,2\pi)+2\pi k$ (car facile du lemme du recouvrement).
+	
+	$e(0,L)=-\dot c(0)=(0,-1)$ donc $\nu (0,L)=\frac{3\pi}{2}+2\pi k$ de $\nu(0,0)=\frac{\pi}2+2\pi k $ donc $\nu(0,L)-\nu(0,0)=\pi$ de même: $(-1, 0)\not\in im(t\mapsto e(t, L))\Rightarrow \nu(L,L) - \nu(0, L)=\pi$ donc $2\pi n_C=2\pi$.
+\end{proof}
+
+\begin{definition}
+	 Une courbe plane est appelée \textsc{Convexe} si tout ses points sont sur un des cotés de sa tangeente. $\Leftrightarrow$ pour chaque $t_C$ $<c(t)-c(t_0)>\geq(\leq) 0,\ \forall t$ avec $n(t_0)\perp T_c(t_0)$.
+	 % illustration of convexity
+\end{definition}
+
+\begin{theorem}
+	Soit une courbe plane de vitesse 1. Alors:
+	\begin{enumerate}
+		\item Si c est convexe on a pour sa courbe $\kappa$ on a:
+		$$\kappa(t)\geq 0\ \forall t (\mbox{ ou } \kappa(t)\leq 0 \forall t)$$
+		\item Si c est fermé simple et si $\kappa(t)\geq 0,\ \forall t $ (ou $\kappa(t)\leq 0, \forall t$) alors $c$ est convexe.
+	\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+	\begin{enumerate}
+		\item Soit $c$ convexe et supposons que $\expval{c(t)-c(t_0), n(t_0)}\geq 0,\ \forall t$. On developpe $c(t)=c(t_0)+\dot c(t_0)(t-t_0)+\ddot c(t)\frac{(t-t_0)^2}2 + o(|t-t_0|^2)$.
+		$0\leq \expval{c(t)-c(t_2), \underbrace{\dot c^\perp(t_0)}_{n(t_0)} }=\underbrace{\expval{\ddot c(t_0, \dot c^\perp(t_0))} }_{\kappa(t_0)}\underbrace{\frac{(t-t_0)^2}2}_{\geq 0}+ o(|t-t_0|^2)$.
+		  $\Rightarrow \kappa(t_0)\geq 0$ donc $\kappa(t)\geq 0 \forall t\in I$
+		\item Supposons que $\kappa(t)\geq 0\forall t$ et que c est fermée simple de période $L$. Si $c$ n'était pas convexe alors il existerait un $t_0$ t.q.:
+			$\phi(t):=\expval{c(t)-c(t_0), \dot c^\perp(t_0)}$, a des valeurs positives et négatives.
+	$\phi$ atteint un maximum eu point $t_2$ et un minimum au point $t_1$ donc $\phi(t_2)\geq 0$ et $\phi(t_1)$ et $\phi(t_1)\leq 0=\phi(t_0)\leq\phi(t_2)$ pour un $t_0$. $\dot \phi (t_1)=0\expval{\dot c(t_1), \dot c^\perp(t_0)}$ donc $\dot c (t_1)=\pm \dot c(t_0)$, $\dot c(t_2)=\pm \dot c(t_0)$. Au moins deux des vecteurs $\dot c(t_0, \dot c (t_1), \dot c (t_2)$ sont donc les mêmes. Soit $s_1, s_2 \in \{t_0, t_1, t_2\}$ t.q. $s_1<s_2$ $\dot c(s_1)=\dot c(s_2)$. On a $\nu(s_2)-\nu(s_1)=2\pi k$ avec $k\in\Z$. $0\leq \kappa (t)\leq\dot\nu(t)$ donc $\nu$ est croissant donc $k\in\mathbb{N}$ de même. $\nu(s_1+L)-\nu(s_2)=2\pi l$ avec $l\in\mathbb{N}$ donc $2\pi n_c=\nu(s_1+L)-\nu(s_1)=2\pi (l+k)=2\pi \mbox{ (Hopf) } \Rightarrow l=0 ou k=0$. Supposons que $k=0$.
+	Donc $\nu(t)=cte \forall t\in [s_1, s_2]$ donc $c(s)=c(s_1)+\dot c(s_1)(s-s_1)=c(s_1)+\dot c(t_0)(s-s_1)$ pour $s\in[s_1,s_2]$. donc $\phi(s)=\expval{c(s)-c(t_0), \dot c^\perp(t_0)}=\expval{c(s_1)-c(t_0), \dot c^\perp(t_0)}=cte$ ce qui n'est pas possible car au moins 2 des points $t_0, t_1, t_2$ sont dans $[s_1, s_2]$.
+	\end{enumerate}
+\end{proof}
+
+\begin{definition}
+	Une courbe plane de vitesse 1. On dit que $c$ admet un sommmet en $t_0$ si $\dot \kappa(t_0)=0$. (sommet=vertex en anglais)
+\end{definition}
+
+\begin{examplebox}
+	On peut demontrer que l'ellipse à quatres sommets.
+\end{examplebox}
+
+\begin{remark}
+	De manière genérale on sait qu'one fouction périodique admet deux points critiques (un maximum et un minimum).
+\end{remark}
+
+\begin{theorem}{des 4 sommet (four vertex theorem)}
+	Soit $c\in C^\infty(\R, \R^2)$ periodique de période $L$ de vitesse 1 et convexe $c$ admet au moins quatre sommets. 
+\end{theorem}
+
+Pour la preuve on a besoin de 2 lemmes
+
+\begin{lemme}
+	Si l'intersection d'une courbe convexe plane fermée simple avec une droite $G$ contient plus que deux points différents alors $c$ contrent un segment de $G$.
+\end{lemme}
+
+\begin{remark}
+	%img rem 1
+\end{remark}
+
+\begin{proof}
+	Supposons que $c$ est orienté positive convexe = 0 $\kappa(t)\geq 0 \Rightarrow \dot\nu (t)\geq 0$ pour $\nu$ une angle $\dot c(t)=(\cos \nu(t),\sin \nu(t))$ par Hopf: $\nu(L)-\nu(0)=2\pi$ donc $\nu:[0,L]\rightarrow[0,2\pi]+\nu_0$ est croissante et surjective.
+\end{proof}
+
+Exercice 2
+\begin{enumerate}
+	\item Démonrer qu'un segment de droite est la courbe la plus courte (de classe $C^1$) etre deux points.
+	S: $A,B\in \R^d$, $c:[0,1]\rightarrow \R^d$, $c(0)=A, c(1)=B$. $L(c)=\int_0^1||\dot c(t)||\dd t$.
+	
+	$c(1)-c(0)=B-A=\int_0^1\dot c(t)\dd t$, $||B-A||=||\int_0^1\dot c(t)\dd t||\leq \int_0^1||\dot c(t) ||\dd t$.
+	\item $f(t)=\cos h (t)$ $\gamma (t)=(t, \cos h (t))$. $s(t)=\int_0^t ||\dot \gamma(\tau)|| \dd \tau=\sin h t,\ t\in[0,2]$. On doit trouves $\phi$ t.q pour $c:=\gamma\circ\phi$ on a $||\dot c||=1$. $t(s)=arcsin h s,\ s\in[0,\sin h 2]$, $c:(0, \sin h 2)\rightarrow \R^2$. $c(s)=\gamma(arcsinh s)$, $s\in(o, sinh 2)$. $c(s)=(arcsin h s, \sqrt[2]{1+s^2}), s\in(0, sin h2)$.
+	\item $\forall t\neq 1:\ \gamma$ est régulier.
+\end{enumerate}
+
+Exercice 3
+\begin{enumerate}
+	\item Deemontrer que si $c:\R\rightarrow\R^n$ est une \underline{paramétrisation par longueur d'arc} d'une courbe fermée, alors $c$ est périodique.
+	
+	Exemple: $t\mapsto (\cos(e^t),\sin(e^t))R=f(t)\ (t\in \R)$. $f$ n'est pas périodique, $f(\R)=S^1$.
+	
+	Dénouter: si $c$ est une parametrisation t.q. $||\dot c(t)||=1$ alors $c$ est périodique.
+	Idée: $d(t+T)=d(t)$ $T$ est période. On definit $\phi$ en ce fouction de passage. $s(t)=\int_0^t||\dot d(\tau)||\dd{\tau}=\int_0^T||\dot d(\tau)||\dd{\tau}=L+s(t)$.
+	$\phi(u+L)=\phi(s(t)+L)-\phi(s(t+T))=t+T=\phi(u)+T$, $u=s(t)$, $s\circ\phi(u)=u$, $\phi$---function inverse function reciproque. $\bar c:=d\circ \phi$ est une parametr. par longu d'arc. $\bar c(u+L)=\phi(s(t)+L)-\phi(s(t+T))=t+T=\phi(u)+T$. ($\phi$ la fonction reciproque de $s$).
+\end{enumerate}
+
+Homework all the rest.
+
