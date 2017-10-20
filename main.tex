@@ -131,10 +131,10 @@
 		\end{proof}
 
 		\begin{definition}
-			Soit $c\in C^\infty(I,\ R^2)$ une courbe plane de vitesse 1, alors $\ddot{c}(t)=\varkappa(t)N(t)$, avec $\varkappa(t):=<\ddot{c}(t),\ N(t)>$.
-			$\varkappa(t)$ - scalar.
+			Soit $c\in C^\infty(I,\ R^2)$ une courbe plane de vitesse 1, alors $\ddot{c}(t)=κ(t)N(t)$, avec $κ(t):=\expval{\ddot{c}(t),\ N(t)}$.
+			$κ(t)$ - scalar.
 	
-			Alors $\varkappa\in C^\infty (I,\ R)$ et $\varkappa$ est appelé la courbure de $c$ ($\varkappa(t)$ la courbure du point $c(t)$)
+			Alors $κ\in C^\infty (I,\ R)$ et $κ$ est appelé la courbure de $c$ ($κ(t)$ la courbure du point $c(t)$)
 		\end{definition}
 
 		\begin{theorem}{Formulas de Frenet}
@@ -143,14 +143,14 @@
 			Soit $\begin{array}{c}T(t):=\dot{c}(t),\\ N(t):=T^\perp (t) \end{array}$, $\{T(t),\ N(t)\}$ - le systeme ortogonale vecteur. Est appellé le \textsc{Repére de Frenet}, ou \textsc{Base de Frenet}. 
 			
 			\textsc{Formules de Frenet}:
-			$$\begin{array}{rcl}\dot{T}(t)&=&\varkappa(t)N(t)\\ \dot{N}(t)&=&-\varkappa(t)T(T)\end{array}$$
+			$$\begin{array}{rcl}\dot{T}(t)&=&κ(t)N(t)\\ \dot{N}(t)&=&-κ(t)T(T)\end{array}$$
 		\end{theorem}
 
 		\begin{remark}
 			$$\frac{\diff}{\diff\, t}\left(
 			\begin{array}{c}
-				T\\N\end{array}\right) = \left(\begin{array}{cc}0 & \varkappa\\
-				-\varkappa & 0
+				T\\N\end{array}\right) = \left(\begin{array}{rc}0 & κ\\
+				-κ & 0
 			\end{array}
 			\right) \left(\begin{array}{c}T\\N\end{array}\right)$$
 		\end{remark}
@@ -201,12 +201,12 @@ $c\in C^\infty(I; \R^2)$ reguliere. Alors $\exists\nu\in C^\infty (I; )$ t.q. $\
 			En particulier $\int\limits_0^L\kappa(t)\dd{t}\in 2\pi\mathbb{Z}$
 		\end{remark}
 		\begin{proof}
-			Soit $\nu\in C^\infty(\R, \R)$ une fonction angle pour la tangente, c.à.d.$\dot{c}(t)=(\cos \nu(t), \sin\nu(t))$. $\ddot{c}(t)=\kappa(t)\dot{c}^\perp (t)$ donc $\kappa(t)=<\ddot{c}(t), \dot{c}^\perp (t)>$ ou $\ddot{c}(t)=\dot{\nu}(t)(-\sin\nu(t), \cos\nu(t))$ et $\dot{c}^\perp(t)=(-\sin\nu(t),\cos\nu(t))$
+			Soit $\nu\in C^\infty(\R, \R)$ une fonction angle pour la tangente, c.à.d. $\dot{c}(t)=(\cos \nu(t), \sin\nu(t))$. $\ddot{c}(t)=\kappa(t)\dot{c}^\perp (t)$ donc $\kappa(t)=\expval{\ddot{c}(t), \dot{c}^\perp (t)}$ ou $\ddot{c}(t)=\dot{\nu}(t)(-\sin\nu(t), \cos\nu(t))$ et $\dot{c}^\perp(t)=(-\sin\nu(t),\cos\nu(t))$
 			donc $<\ddot{c}(t), \dot{c}^\perp(t)>=\dot{\nu}(t)=\kappa(t)$ ou
 			$$n_c = \frac{1}{2\pi}(\nu(L)-\nu(0))=\frac{1}{2\pi}\int_0^L \dot{\nu}(t)\dd{t}=\frac{1}{2\pi}\int_0^L\kappa(t)\dd{t}.$$
 		\end{proof}
 
-		\begin{theorem}{Hopf. Turning tangent theorem}
+		\begin{theorem}[Hopf. Turning tangent theorem]
 			Une courbe plane fermée simple a un nombre de rotation (de la tangente) 1 ou $-1$.
 		\end{theorem}
 
@@ -407,7 +407,7 @@ $c\in C^\infty(I; \R^2)$ reguliere. Alors $\exists\nu\in C^\infty (I; )$ t.q. $\
 				\begin{theorem}
 					Soit $G\subset\R^2$ une region bornée par une courbe fermé simple de longueur L. Alors pour l'aire $A$ de $G$ on a:
 					$$4\pi A\leq L^2$$
-					et $4\pi A=L^2$ <=> la courbe est un cercle.
+					et $4\pi A=L^2$ $\Leftrightarrow$la courbe est un cercle.
 				\end{theorem}
 				\begin{proof}
 					Soit $c$ une paramétrisation de la courbe de vitesse 1, de période $L$ orientée positive. Pour déterminer $A$ à partir de $c$ on utilise le théorème de Stoks. Pour $F\in C'(G,\R^2)$ un champs de vecteurs on a:
@@ -444,6 +444,275 @@ $c\in C^\infty(I; \R^2)$ reguliere. Alors $\exists\nu\in C^\infty (I; )$ t.q. $\
 					$$2A=\frac L{2\pi}\int\limits_0^{2\pi}\Im \dot z\bar z=\sum k|c_k|^2\cdot 2\pi$$
 					$$4\pi A=4\pi^2\sum k|c_k|^2$$
 					$$L^2=2\pi\cdot \sum k^2 |c_k|^2$$
-					or $\sum_{k\in\Z}k|c_k|^2\leq\sum_{k\in\Z}k^2|c_k|^2$ avec égalité <=> $c_k=0$ pour $k\not\in\{0,1\}$ donc égalité <=> $z(t)=c_0+c_1e^{it}$ <=> $t\mapsto (x(t),y(t))$ est un cercle.
+					or $\sum_{k\in\Z}k|c_k|^2\leq\sum_{k\in\Z}k^2|c_k|^2$ avec égalité $\Leftrightarrow$$c_k=0$ pour $k\not\in\{0,1\}$ donc égalité $\Leftrightarrow$$z(t)=c_0+c_1e^{it}$ $\Leftrightarrow$$t\mapsto (x(t),y(t))$ est un cercle.
 		
 				\end{proof}
+				
+\section{Courbes dans $\R^3$} % (fold)
+
+\begin{definition}
+	Soit $c\in C^∞(I;\R^3)$ une courbe paramétrie et réguliére.
+	\begin{enumerate}
+		\item $ν\in C^∞(I;\R^3)$
+		$$ν(t):=\frac{\dot c(t)}{||\dot c (t)||}$$
+		est appelée \textsc{Champs Tangent}. $c$ est appelé une courbe paramétrie \textsc{Bireguliere} si $\dot v(t) \wedge  \ddot c(t)\neq 0,\ \forall t\in I$. (produit vectoriel).
+		Dans ce cas on difinit: $$b(t):=\frac{\dot c(t)\wedge \ddot c(t)}{||\dot c(t)\wedge \ddot c(t)||}$$
+		le \textsc{Champs Binormalte} et le plan \textsc{Osculateur}:
+		$$\pro_c(t)=\{p\in \R^3:\ \expval{p-c(t),b(t)}=0\}$$ plan affine passant perpendiculaire avec vecteur normale $b(t)$. Le \textsc{Champs Normale} est définie par $n(t):=b(t)\wedge ν(t)$.
+		\item Pour une courbe paramétrie biréguliére le \texttt{repére orthomal directe} \\$\{ν(t),n(t),b(t)\}$ est appelé le \textsc{Repére de Frenet} de la courbe $c$ au point $c(t)$.
+		$$κ(t):=\frac 1{||\dot c(t)||}\expval{\dot ν(t),n(t)}$$
+		est appelée \textsc{Courbure} de coube de $c$ en $t$:
+		$$\tilde c(t):=\frac 1{||\dot c(t)||}\expval{\dot n(t), b(t)}$$
+		est appelée la \textsc{Torsion} de $c$ en $t$.
+	\end{enumerate}
+\end{definition}
+
+\begin{remark}
+	\begin{enumerate}
+		
+		\item la biregular assure que le plan osculaleur est bien definie.
+		$$\pro_c(t):=c(t)+\vect\{\dot c(t),\ddot c(t)\}$$
+		
+		\item le vecteur $b(t)\perp\pro_c(t)$.
+		\item $n(t)\in \vect\{\dot c(t),\ddot c(t)\}$
+		\item $\vect\{\dot c(t), \ddot c(t)\}=\vect\{\nu(t), n(t)\}$
+		\item Si $c$ est de vitesse 1 alors $c$ biréguliére $\Leftrightarrow$$||\ddot c (t)||\neq 0,\ \forall t$ car dans ce cas $\expval{\dot c(t),\ddot c(t)}=0$ donc $||\dot c()\wedge \ddot c (t)||=||\dot c(t)||\cdot ||\ddot c(t)||\neq 0$ de plus $κ(t)=||\ddot c(t)||$ (car $κ(t)=\expval{\dot ν,n(t)}=\expval{\dot c(t),\frac{\ddot c(t)}{||\ddot c(t)||}}=||\ddot c(t)||$).
+		\item En particulier pour une courbe dans l'espace $κ(t)\geq0\ \forall$
+		\item Si $c(I)=imc\subset plan\subset\R^3$ la courbure de $c$ n'est pas même que la courbure definie pour la xstihon $\hat c$ au plan on a $κ=|\hat κ|$.
+		\item Ce plan osculateur est indipendant de la parametrisation. $\check c=c\circ φ; \dot\check c=\dot c\circ φ \cdotφ; \ddot\check c=\ddot c\circ φ \dot φ^2+\dot c°φ \ddot φ$.
+		($\vect\{\dot\check c(t),\ddot \check c(t)\}=vect\{\dot c(\phi(t)),\ddot c(\phi(t))$).
+	\end{enumerate}
+\end{remark}
+
+\begin{proposition}
+	Equations de Frenet pour une courbe biréguliére.
+	\begin{align*}
+		\dot ν (t) &= &\frac 1{||\dot c(t)||}κ(t)n(t)\\
+		\dot n(t) &= &\frac 1{||\dot c(t)||}(-κ(t)ν(t)+τ(t)b(t))\\
+		\dot b(t) &= -&\frac 1{||\dot c(t)||}τ(t)n(t)
+	\end{align*}
+	Memo $\begin{array}{c}ν\\n\\b\end{array}=\begin{array}{ccc}0&0&0\\0&0&0\\0&0&0 \end{array}\begin{array}{c}\end{array}$.
+\end{proposition}
+\begin{proof}
+	$κ=\frac 1{||\dot c||}\expval{\dot ν,n}=0\ (1)$\\
+	$\expval{\dot ν,b}=0$ car $\dot ν\in\vect\{\dot c, \ddot c\}$. $\expval{ν,b}=0$ $\Rightarrow$$\expval{\dot ν,b}+\expval{ν,\dot b}=0$ donc $\dot b\perp ν$.
+	$τ=\frac 1{||\dot c||}\expval{\dot n, b}$ $\expval{n,b}=0$ $\expval{\dot n,b}+\expval{n,\dot b}=0$ $\Rightarrow$(3). (2) découle donc de $\expval{\dot n, ν}=-\expval{n,\dot ν}$ car $\expval{ν,n}=0$ $\expval{\dot n, b}$ definition de $\tau$.
+\end{proof}
+
+\begin{theorem}
+	[foundammentale de la théorie de Frenet]
+	Soit $I$ un intervalle et $κ,τ\in C^∞(I,\R)$, $κ(t)\geq 0$. Alors il existe une courbe paramétrie de vitesse 1 $c\in C^∞(I;\R^3)$ tq. sa courbure et sa torsion sont $τ$ et $κ$. Toute autre courbe qui ales mémes propriétés est de la forme: $\hat c=F\circ c$ avec $F(x)=Ax+b$ avec $A\in SO(3)$.
+\end{theorem}
+\begin{proof}
+	Ce systéme d'équations differentielles:
+	\begin{align*}
+		\dot ν &= κn\\
+		\dot n &= -κ\nu + τb\\
+		\dot b &= -τn
+	\end{align*}
+	est lineaire et d'ordre 1. Pour tout systeme orthonue diuct et $\forall t_0\in I:\ \{e_1, e_2, e_3\}$ il existe une solution t.q.
+	\begin{align*}
+		ν(t_0)&=e_1\\
+		n(t_0)&=e_2\\
+		b(t_0)&=e_3
+	\end{align*}
+	on define $c(t_0)+∫_{t_0}^tν$ pour un $c(t_0)\in\R^3$
+\end{proof}
+
+\begin{examplebox}[Pour courbure et $\bar c$osion]
+	$κ=\frac 1{||\dot c||}\expval{\dot ν, n};\ τ=\frac 1{||\dot c||}\expval{\dot n, b}$.
+	Soit
+	\begin{align*}
+		c(t) &:=(\cos t, \sin t, t),\ t\in\R\\
+		\dot c(t)&=(-\sin t, \cos t, 1);\ ||\dot c(t)||^2=2\\
+		\ddot c(t)&=(-\cos t, -\sin t, 0)\\
+		ν(t)&=\frac 1{\sqrt{2}} (-\sin t, \cos t, q)\\
+		b(t)&=\frac{\dot c \wedge  \ddot c}{||\dot c \wedge  \ddot c||}(t)=\frac{(\sin t,-\cos t, 1)}{\sqrt{2}}\\
+		n(t)&=-(\cos t, \sin t, 0)\\
+		\dot ν(t)&=\frac 1{\sqrt{2}}(-\cos t, -\sin t, 0)\\
+		& \expval{\dot ν, n}=\frac 1{\sqrt{2}} \Rightarrow κ=1\\
+		\dot n(t)&=-(-\sin t,\cos t, 0)\\
+		& \expval{\dot n, b}=\frac1{\sqrt2} \Rightarrow τ=1
+	\end{align*}
+	Image
+\end{examplebox}
+
+\begin{remark}[Theoreme foundamentalle dans le plan]
+	Soit $κ\in C^∞(I;\R)$ pour un intervalle $I$. Alors il existe une courbe paramétrie par lagueur d'arc $c$ t.q. sa courbure est $κ$. Toute autre courbe set un $\hat c$ avec les mêmes proprietes est de forme:
+	$$\hat c(t)=F\circ c(t+t_0),$$
+	pour $t_0\in \R$ et F une isometrie directe $\Leftrightarrow$deplacement.
+\end{remark}
+
+Deux résultats sur la géométrie globale des courbes dans l'espace.
+
+\begin{definition}[courbure totale]
+	Soit $c\in C^∞(\R;\R^3)$ une courbe paramétrie par longueur d'arc et périodique de période L, $κ\in C^∞(I;\R)$ est sc courbure. Alors $κ(c):=∫_0^Lκ(t)\dd{t}$ est appelé \textsc{courbure totale} de $c$. 	
+\end{definition}
+
+\begin{remark}
+	Dans le p'au on sait (Hopf) que $κ(c)=±1$ si $c$ est simple.
+\end{remark}
+
+On peut dénoutrer
+\begin{theorem}[Fenchel]
+	Soit $c\in C^∞(\R;\R^3)$ une courbe fermée simple. Alors pour sa courbure totale:
+	$$κ(c)\geq2π.$$
+	De plus on a $κ(c)=2π$ $\Leftrightarrow$$c$ est un courbe plane et convexe.
+\end{theorem}
+\begin{proof}
+	Sans.
+\end{proof}
+On peut dénouter
+\begin{theorem}[Fary-Tlilnor]
+	Soit $c\in C^∞(\R;\R^3)$ une courbe fermée simple. Si $c$ admet un \texttt{noeud} alors pour la courbure totale on a
+	$$κ(c)≥4π.$$
+\end{theorem}
+\begin{remark}
+	Si $c$ admet un \texttt{noeud}, c'est à dire on ne peut définir $c$ d'une manière continue en une courbe plane fermée simple.
+\end{remark}
+
+\begin{definition}
+	Une \textsc{Isotopie} de $\R^3$ est une application.
+	$$φ\in C^0([0,1]\times\R^3;\R^3)$$
+	t.q. $\forall t\in[0,1]\ φ(t,•)$ est un \texttt{homeomorphism}.
+\end{definition}
+\begin{definition}
+	Deux courbes fermeies simples $c_1, c_2$ sontnt appélé \textsc{Isotope}. S'il existe une isotopie $φ$ t.q.
+	$$φ(0,X)=X\ \forall x\in\R^3;\ φ(1, \img(c_0))= \img(c_1).$$
+\end{definition}
+\begin{definition}\leavevmode
+	\begin{itemize}
+		\item Un noeud est une class l'equivalence d'une isotopie.
+		\item Une courbe fermé simple est \textsc{Sans Noeud}, si elle est isotope à une courbe plane fermée simple.
+	\end{itemize}
+\end{definition}
+
+\ifcomment
+$\Leftrightarrow$ \Leftrightarrow 
+\pdv  \pdv
+\pd_{x_2} \pd_{x_2}
+\mapsto  \mapsto
+\rightarrow \rightarrow
+\fi
+
+\section{surfaces}
+
+\begin{definition}[Surface régulière]
+	Soit $S\subset \R^3$. $S$ est appelé \textsc{Surface Régulière}. Si pour chaque $p\in S$ il existe un ouvert $V\subset \R^3$ t.q. $p\in V$ et s'il existe un ouvert $U\subset\R^2$ et un $F:\underbrace{U}_{\subset \R^2}\rightarrow\R^3$ $C^∞$ t.q. 
+	\begin{enumerate}
+		\item $F(U)=S\cap V$ et $F:U\rightarrow S\cap V$ est un homéomorphisme (c.a.d. $F|_U$ continue et son inverse $F\dmo|_U$ est continue)
+		\item Le Jacobien $Du F$ a $\rank 2$ $\forall u\in U$
+	\end{enumerate}
+\end{definition}
+\begin{remark}
+	La matrice jacobienne dans U repère standard:
+	$$F(X_1, X_2)=(F_1(X_1, X_2),F_2(X_1, X_2),F_3(X_1, X_2))$$
+	$$Du J = 
+	\mqty(
+	\pd_{x_1} F_1 & \pd_{x_2} F_1\\
+	\pd_{x_1} F_2 & \pd_{x_2} F_2\\
+	\pd_{x_1} F_3 & \pd_{x_2} F_3
+	)$$
+	
+	$U=(x_1, X_2)$
+	$\pd_{x_j} F = \mqty(
+	\pd_{x_j} F_1\\
+	\pd_{x_j} F_2\\
+	\pd_{x_j} F_3
+	)$
+	
+	donc rang $Du F=2$ $\Leftrightarrow$  $\pd_{x_1} F, \pd_{x_2} F$ sont indépendants $\dim \vect\{\pd_{x_1} F, \pd_{x_2} F\}=2$ $\Leftrightarrow$ deux vecteurs tangents à $S$ au point $F(u)$ qui sont indépendant c'est a dire : on peut définir l'espace tangent $\Leftrightarrow$ $||\pd_{x_1} F\wedge\pd_{x_2} F||\neq 0$.
+	
+	$u_1=(x_1,x_2)$ la ligne $x_2=\ct{const}$ qui passe par $U$. $\R\ni t\mapsto  (x_1,x_2+t)=:c(t)$, $c(0)=u$. $t\mapsto  F(c(t))$ est la courbe correspondante sur $S$.
+	
+	$\pdv  F(c(t))|_{t=0}=\pdv  F(x_1,x_2+t)|_t=0 = \pd_{x_2} F(x_1, x_2)$
+\end{remark}
+
+\begin{definition}
+	Pour une surface régulière l'application $F:U\rightarrow S\cap V$ (on encore $(U,F,V)$) \textsc{Paramétrisation Locale} de $S $au point $p$.
+	$S\cap V$ est appelé un \textsc{Voisinage de Coordonnées} et les composantes $(u_1,u_2)$ de $u$ t.q. $F(u)=p$ les \textsc{Coordonnées de $p$ par Rapport} à $F$.
+\end{definition}
+\begin{example}
+	Pour $p\in \R3$ et $X_1$, $X_2\in \R^3$ le plan affine $S:=\{X, X=p+u_1X_1+u_2X_2 \}$ est une surface régulière. Car: On peut prendre (pour tout $p\in S$) $V:=\R^3; U:=\R^2$
+	$F(u_1, u_2)=p+u_1X_1+u_2X_2$
+	
+	F es une fonction affine donc F est différentiable. (en tout que fonction de $\R^2\rightarrow\R^3$)
+	$F(U)=S=S\cap\R^3 F:U\rightarrow S$ est un homéomorphisme.
+\end{example}
+\begin{example}[graphe d'une fonction]
+	(Une seule paramétrisation!) Soit $U\subset \R^2$ ouvert $f:U\rightarrow\R$ différentiable. $S=\{x=(x_1,x_2,x_3): (x_1,x_2)\in U, x_3=f(x_1, x_2)\}$
+	
+	On peut prendre de nouveau $V=\R^3$ $U$ (est $U$)
+	$F(u_1,u_2):=(u_1, u_2, f(u_1, u_2))$ $F:U\rightarrow\R^3$ est différentiable. $F:U\rightarrow F(U)=S$ est continue $F|_n\dmo$ est la projection orthogonale donc continue. La surface est régulière car 
+	$\pd_{u_1}F=(1,0,\pd_{u_1}f(u_1,u_2))$
+	$\pd_{u_2}F=(0,1,\pd_{u_2}f(u_1,u_2))$
+	$\pd_{u_1}\wedge\pd_{u_1}= (.,.,1)\neq 0$
+	
+	Addendum: le plan affine est régulier
+	$X=p+u_1X_1+u_2X_2$
+	$\pd_{u_1}F=X_1$, $\pd_{u_2}F=X_2$
+	$\pd_{u_1}F\wedge\pd_{u_2}F=X_1\wedge X_2\neq Si X_1,X_2$ sont indépendantes $\Leftrightarrow$ $\dim \vect\{X_1, X_2\}=2$.
+\end{example}
+
+\begin{example}
+	$S(=S^2)=\{(x,y,z)\in \R^3; x^2+y^2+z^2=1\}$
+	$S$ est une surface régulière?
+	Soit $p=(p_1,p_2,p_3)\in S$ t.q. $p_3>0$
+	$F(X,Y)=(X,Y, \sqrt{1-x^2-y^2})$ ($x^2+y^2<1$)
+	$U:=\{(X,Y);\ x^2+y^2<1\}; V:= \{(x,y,z); z>0\}$
+	
+	$S\cup V_3$ est le graphe
+	de $(X,Y)\mapsto \sqrt{1-x^1-y^2}$ qui est $C^∞$ par l'exemple du graphe on a que $F$ est une paramétrisation en $p $pour chaque $p\in S\cap V_+$
+	
+	Soit $p\in S$; $p_3<0$
+	on choisi $U:=\{(x,y); x^2+y^2<1\}$ $V_-=\{(x,y,z); z<0\}$
+	$F_-(x,y):=(x,y,-\sqrt{1-x^2-y^2})$ $(x,y)\in U$
+	$V_-=\{(x,y,z); z<0\}$
+	parce que $S\cap V_-$ est le graphe de $U\ni (x,y) \mapsto  -\sqrt{1-x^2-y^2}$ qui est différentiel. Par le précédent $(U,F_-, V_-)$ est un voisinage de coordonnées pour chaque point $p\in S$ t.q. $p_3<0$.
+	
+	$\{p\in S\text{ t.q. } p_2>0 \}$ est le graphe $U\in (x,y)\mapsto \sqrt{1-y^2-z^2}$ donc par le précédent $(U,F_{1_±}, V_{1_±})$ avec $V_{1_±} ={(x,y,z), x>_<0}$ et $F_{1_±}=(y,z,±\sqrt{1-y^2-x^2})$
+	De même: $(U, F_{2_±}, V_{2_±})$ avec $V_{2_±}=\{x,y,z x>0\ y<0\}$ $F_{2_±}(X,z)=(x,z,±\sqrt{1-x^2-z^2})$ est un voisinage de coordonnées pour $\{p\in S; p_2>_<0\}$
+	
+	En résumé: $S^2$ est une surface régulière.
+\end{example}
+
+\begin{remark}
+	Il nous a falloir 6 paramétrisations pour monter que $S$ est la une surface régulière. On peut faire avec 2 paramétrisations mais pas avec 1.
+\end{remark}	
+	
+\begin{proposition}
+	Soit $V_0\subset\R^3$ ouvert $f\in C^∞(V_0; \R)$
+	$S:=\{ (x,y,z)\in V_0; f(x,y,z)=0\}$
+	Si $\grad f(p)\neq 0 \forall p\in S$ alors $S$ est une surface régulière.
+\end{proposition}
+\begin{remark}
+	\begin{itemize}
+		\item $S^2=f\dmo (0)$ pour $f(x,y,z)=x^2+y^2+z^2 -1$
+		\item $S$ --- le plan affine $=f\dmo (0)$ de $f(X)=\expval{X-P,n}$ pour un $p\in S$ et $n$ un vecteur normale à $S$.
+	\end{itemize}
+\end{remark}
+\begin{proof}
+	Soit $p=(X_0,Y_0,Z_0)$
+	$grad f(p)=(\pd_x f(p),\pd_y f(p),\pd_z f(p))\neq (0,0,0)$
+	
+	Supposons que $\pd_z f(p) \neq 0$. Par le théorème des fonctions implicites il existe un voisinage $V\subset V_b$ de $p$ un voisinage $U\subset \R^2$ de $(X_0,Y_0)$ et une fonction $g\in C^∞ (U,\R)$ t.q. $S\cap V=\{(x,y,g(x,y)); x,y\in U\}$ donc on conclure en utilisant l'exemple du graphe d'une fonction (cad $f(x,y,g(x,y))=0$).
+\end{proof}
+
+Attention: la condition $\grad f(p)\neq 0 (p\in S)$ est suffisante mais pas nécessaire. Par exemple $S^2=\tilde f\dmo (0)$
+pour $\tilde f(x,y,z)=(x^2+y^2+z^2-1)^2$ $\grad \tilde f(x,y,z)=2(x^2+y^2+z^2-1)2(x,y,z) =0$ si $x^2+y^2+z^2=1$
+\begin{example}
+	$f(x,y,z)=x^2+y^2-z^2 (x,y,z)\in\R^3$
+	$S=f\dmo(0)$
+	$\grad f(x,y,z)=2(x,y,-z)=0$ $\Leftrightarrow$ $(x,y,z)=(0,0,0) (0,0,0)\in S$
+	
+	In faut donc examine $S$ autour (=dans un voisinage) de $(0,0,0)$
+	$S=\{ (x,y,z); |z|=\sqrt{x^2+y^2}\}$
+	
+	$S$ est un double-cône 
+	\begin{remark}
+		rotation de la courbe $X\mapsto  (X,Z)$ avec $|x|=|y|$ autour de l'axe des $z$
+	\end{remark}
+	Il ne eut exister de voisinage $V\subset\R^3$ de $(0,0,0)$ et $U\subset \R$ ouvert t.q. $F|_U:U\rightarrow S\cap V$ soit homeomorphe avec $F:U\rightarrow\R^2$ t.q. $Du F$ est de $rang 2$ 
+	car pour $p\in S\cup V$ avec $p_3>0$ et $q\in S\cap V$ avec $q_3< 0$ et toute courbe $c:[0,1]\rightarrow S\cap V $avec $c(0)=p$, $c(1)=q$. $\exists t_0$ t.q. $c(t_0)=(0,0,0) $
+	or dans $U$ il existent des courbes qui évitent l'origine. C'est à dire $γ\in C^0([0,1], U)$ $γ(0)=F\dmo(q)$ $γ(1)=F\dmo(p)$ $γ(t)\neq F\dmo(0) \forall t\in[0,1]$.
+\end{example}
