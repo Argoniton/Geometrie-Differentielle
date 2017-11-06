@@ -169,7 +169,7 @@
 		% find: \$([^\n\$]*)R([^\n\$]*)\$
 		% replace: $$1\mathbb{R}$2$
 \begin{rappel}
-$c\in C^\infty(I; \R^2)$ reguliere. Alors $\exists\nu\in C^\infty (I; )$ t.q. $\dot{c}(t)=(\cos \nu(t), \sin\nu(t))$. On définie le \textsc{Nombre de Rotation de la Tangente} pour une courbe periodique de période $L$:
+$c\in C^\infty(I; \R^2)$ régulière. Alors $\exists\nu\in C^\infty (I; )$ t.q. $\dot{c}(t)=(\cos \nu(t), \sin\nu(t))$. On définie le \textsc{Nombre de Rotation de la Tangente} pour une courbe periodique de période $L$:
 		$$n_c:=\frac{1}{2\pi}(\nu (L)-\nu(0))$$
 \end{rappel}
 	
@@ -183,7 +183,7 @@ $c\in C^\infty(I; \R^2)$ reguliere. Alors $\exists\nu\in C^\infty (I; )$ t.q. $\
 			Le nombre de rotation de la tangente est donc invariant par rapport à une reparamétrisation que preserve l'orientation.
 		\end{remark}
 		\begin{proof}
-			On avait vu que $\varphi(t)=\pm t+t_0$ donc $\dot{\varphi}>0$ $=>$ $\varphi (t)=t+t_0$. Soit $\nu_2$ t.q. $\dot{c}_2(t)=(\cos\nu_2(t), \sin\nu_2(t))$ alors pour $\nu_1:=\nu_2\circ\varphi$ on a que $\dot{c}_1(t)=(\cos\nu_1(t), \sin\nu(_1t))$. Soit $\bar{\nu}_1(t):=\nu_1(t+L)$ on a que $\dot{c}(t)=(\cos\bar{\nu}_1(t), \sin\bar{\nu}(_1t))$ car $c_1(t)=c_1(t+L)$.
+			On avait vu que $\varphi(t)=\pm t+t_0$ donc $\dot{\varphi}>0$ $\Rightarrow$  $\varphi (t)=t+t_0$. Soit $\nu_2$ t.q. $\dot{c}_2(t)=(\cos\nu_2(t), \sin\nu_2(t))$ alors pour $\nu_1:=\nu_2\circ\varphi$ on a que $\dot{c}_1(t)=(\cos\nu_1(t), \sin\nu(_1t))$. Soit $\bar{\nu}_1(t):=\nu_1(t+L)$ on a que $\dot{c}(t)=(\cos\bar{\nu}_1(t), \sin\bar{\nu}(_1t))$ car $c_1(t)=c_1(t+L)$.
 			\begin{align}
 				2\pi(n_{c_2}-n_{c_1}) & = (\nu_2(L)-\nu_2(0))-(\nu_1(L)-\nu_1(0))
 				& =(\nu_2(L-t_0)-\nu_2(-t_0)) - (\nu_1(L)-\nu_1(0))
@@ -384,7 +384,7 @@ $c\in C^\infty(I; \R^2)$ reguliere. Alors $\exists\nu\in C^\infty (I; )$ t.q. $\
 						\dot\kapa (t)>0\ &t\in(t_1,L)\\
 						\dot\kapa (t)<0\ &t\in(0,t_1)
 					\end{align*}
-					=> $\dot\kapa(t)\expval{c(t)-c(0),\nu^\perp}>0,\ t\in(t_1,L)\text{ et }t\in(0,t_1)$ or $\int\dot\kapa(t)(c(t)-c(0))\dd{t}=-\int\limits_0^L\kapa(t)\dot c(t)\dd t$ or on sait que $\dot n(t)=\kapa(t)\dot c(t)$ équation de Frenet $n=\dot c^\perp$.
+					$\Rightarrow$  $\dot\kapa(t)\expval{c(t)-c(0),\nu^\perp}>0,\ t\in(t_1,L)\text{ et }t\in(0,t_1)$ or $\int\dot\kapa(t)(c(t)-c(0))\dd{t}=-\int\limits_0^L\kapa(t)\dot c(t)\dd t$ or on sait que $\dot n(t)=\kapa(t)\dot c(t)$ équation de Frenet $n=\dot c^\perp$.
 					\begin{align*}
 						\dot T&=\kapa n\\
 						\dot N&=-\kapa T
@@ -455,7 +455,7 @@ $c\in C^\infty(I; \R^2)$ reguliere. Alors $\exists\nu\in C^\infty (I; )$ t.q. $\
 	\begin{enumerate}
 		\item $ν\in C^∞(I;\R^3)$
 		$$ν(t):=\frac{\dot c(t)}{||\dot c (t)||}$$
-		est appelée \textsc{Champs Tangent}. $c$ est appelé une courbe paramétrie \textsc{Bireguliere} si $\dot v(t) \wedge  \ddot c(t)\neq 0,\ \forall t\in I$. (produit vectoriel).
+		est appelée \textsc{Champs Tangent}. $c$ est appelé une courbe paramétrie \textsc{Birégulière} si $\dot v(t) \wedge  \ddot c(t)\neq 0,\ \forall t\in I$. (produit vectoriel).
 		Dans ce cas on difinit: $$b(t):=\frac{\dot c(t)\wedge \ddot c(t)}{||\dot c(t)\wedge \ddot c(t)||}$$
 		le \textsc{Champs Binormalte} et le plan \textsc{Osculateur}:
 		$$\pro_c(t)=\{p\in \R^3:\ \expval{p-c(t),b(t)}=0\}$$ plan affine passant perpendiculaire avec vecteur normale $b(t)$. Le \textsc{Champs Normale} est définie par $n(t):=b(t)\wedge ν(t)$.
@@ -716,3 +716,330 @@ pour $\tilde f(x,y,z)=(x^2+y^2+z^2-1)^2$ $\grad \tilde f(x,y,z)=2(x^2+y^2+z^2-1)
 	car pour $p\in S\cup V$ avec $p_3>0$ et $q\in S\cap V$ avec $q_3< 0$ et toute courbe $c:[0,1]\rightarrow S\cap V $avec $c(0)=p$, $c(1)=q$. $\exists t_0$ t.q. $c(t_0)=(0,0,0) $
 	or dans $U$ il existent des courbes qui évitent l'origine. C'est à dire $γ\in C^0([0,1], U)$ $γ(0)=F\dmo(q)$ $γ(1)=F\dmo(p)$ $γ(t)\neq F\dmo(0) \forall t\in[0,1]$.
 \end{example}
+
+
+\begin{proposition}
+	$S\subset \R^2$ surface régulière et $(U,F,V)$ une paramétrisation Loz- a $U$. Soit $W\subset\R^n$ ouvert et $\phi:W\rightarrow \R^3$ t.q. $φ(W)\subset S\cap V$ alors $φ\in C^∞(W;\R^3)$ $\Leftrightarrow$  $F\dmoºφ\in C^∞(W,U)$.
+\end{proposition}
+\begin{proof}\ \\
+	($\Leftarrow$ ) $φ=\underbrace{F}_{\C^∞} º\underbrace{(F\dmoºφ)}_{\C^∞}$
+	($\Rightarrow$ ) Soit $φ$ différentielle. On sait que rang $D_u f=2$
+	
+	$$D_u f \cong  \mqty(\pd u_1 F_1 & \pd u_2 F_1 \\ \pd u_1 F_2 & \pd u_2 F_2 \\\pd u_1 F_3 & \pd u_2 F_3)$$
+	
+	Supposons qui  $\det\mqty(\pd u_1 F_1 \pd u_2 F_1\\ \pd u_1 F_2 \pd u_2 F_2)≠0$.
+	
+	Soit $G:U\times \R\rightarrow \R^3$.
+	$G(u_1,u_2, T):= F(u_1,u_w)+(0,0,t)=(F_1(u_1,u_2,F(u_1,u_2), F(u_1,u_2)+t))$ alors $G$ est différentiable, 
+	$D_{(u_1u_2t)}G\cong \mqty(\pd u_1 F_1&\pd u_2 F_1&0\\\pd u_1 F_1&\pd u_1 F_1&0\\\pd u_1 F_1&\pd u_1 F_1&1)$
+	donc $\det D_{(u_1u_2t)}G ≠ 0$. Donc par le théorie de la fonction inverse il existe $U_1\subset U\times \R^2 et V_1\subset V$ t.q. $G|_{U_1}:U_1\rightarrow V_1$ est un difféomorphisme. Soit $W_1=φ\dmo(V_1)$ pour $\hat p\in W_1$ on $G\dmoºφ(\hat p)=(F\dmoºφ(\hat p), 0)$ car $F(u_1,u_2)=G(u_1,u_2, 0)$ $G\dmoºφ$ est $C^∞$ sur $W_1$.
+\end{proof}
+
+\begin{corollaire}
+	Soit $S$ une surface régulière et $(U_1,V_1,F_1)$ et $(U_2,V_2,F_2)$ deux paramétrisations locales. Alors $F_2ºF_1\dmo:F_1\dmo(V\cap V_2)\rightarrow F_2\dmo(V_1\cap V_2)$ est $\C^∞$.
+\end{corollaire}
+\begin{proof}
+	On applique la proposition précédente à $W=F_1\dmo(V_1\cap V_2)$ et $φ=F_1$ et $$(U,V,F):= (U_2,V_2, F_2)$$ 
+\end{proof}
+
+\begin{proposition}
+	Soit $S\subset\R^3$ une surface régulière $F:S\rightarrow \R^n$ continue. Soit $p\in S$, alors sont équivalents:
+	\begin{enumerate}
+		\item $\exists V\subset\R^3$ voisinage de $p$ et une extension $\hat f$ de $f|_{S\cap V}$ à $V$
+		\item $\exists$ une paramétrisation locale $(U,F,V)$ avec $p\in V$ t.q. $fºF:U\rightarrow \R^n$ est $C^∞$
+		\item $\forall$ paramétrisation locale $(U,F,V)$ avec $p \in V$ $fºF: U\rightarrow  \R^n$ est $C^∞$
+	\end{enumerate}
+\end{proposition}
+\begin{proof}
+	\begin{enumerate}
+		\item (1) $\Rightarrow$  (2)
+		Car $F$ est $C^∞$ $fºF=\hat fºF$
+		\item (3) $\Rightarrow$  (2) Ok
+		\item (2) $\Rightarrow$  (1) 
+		On considère (de nouveum) $(U_1, U_2, t):= F(u_1,u_2)+(0,0,t)$ Soit $g(u_1,u_2):=fºF(u_1,u_2)=fºG(u_1,u_2,0$)
+		donc $g$ est $C^∞$ en $(F\dmo(p),0)$ et $\hat f:=gºG\dmo$.
+	\end{enumerate}
+\end{proof}
+\begin{definition}
+	Soit $S\subset \R^3$ une surface régulière et $f:S\rightarrow \R^n$ continue. On dit que $f$ est $C^∞$ \textsc{en} $p$ si une des trois assertions équivalentes du précédent est vraie.
+\end{definition}
+\begin{definition}
+	Soit $S_1,S_2\subset\R^3$ deux surfaces régulières. Soit $f:S_1\rightarrow S_2$ continue On dit que $f$ est $C^∞$ en $p\in S_1$. Si'l existe une paramétrisation locale $(U_1,V_1, F)$ de $S_1$ en $p$ et une paramétrisation locale $(U_2, V_2, F_2)$ de $S_1$ en $f(p)$ t.q. $F_2\dmoºfºF_1:F\dmo_1(f\dmo(V_2)\cap V_1)\rightarrow  U_2$ est $C^∞$ en $p$.
+\end{definition}
+\begin{remark}
+	Si $F_2\dmoºfºF_1 est C^∞$ pour deux paramétrisations alors $\tilde F_2\dmoºfº\tilde F_1$ est $C^∞$ pour toutes paramétrisations $\tilde F_1, \tilde F_2$. Car $F_1\dmoº\tilde F_1$ et $F_2\dmoº\tilde F_2$ sont $C^∞$ par le précédent.
+\end{remark}
+\begin{corollaire}
+	Soient $S_1, S_2$ deux surfaces régulières et $V\subset\R^3$ ouvert t.q. $S_1\subset V$ . Soit $f:V\rightarrow \R^3$ t.q. $f(S_1)\subset S_2$ alors $f|_{S_1}:S_1\rightarrow S_2$ est différentiable.
+\end{corollaire}
+\begin{definition}
+	Soit $S_1,S_2$ deux surfaces régulières. $f:S_1\rightarrow S_2$ est appelé \textsc{Difféomorphisme} si $f$ est bijection et si $f$ et $f\dmo$ sont différentiables. Dans ce cas on dit que $S_1$ est \textsc{Difféomorphe} à $S_2$.
+\end{definition}
+\begin{examplebox}
+	Soit $S_2 = S^2$ (la sphère) et $S_1\rightarrow S_2=\{(x,y,z)\in \R^3; \frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2}=1\}$ pour $a,b,c>0$ e'ellipsoïde $S_1$ est une surface régulière car $S_1=g\dmo(0)$ pour $g(x,y,z)=\frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2}-1$  $\grad g(x,y,z)≠(0,0,0)$ pour $(x,y,z)\in S_1$. Soit $f:S_1\rightarrow S_2$ $f(x,y,z):=(\frac xa,  \frac yb, \frac zc)=(f_1,f_2,f_3)$ est bien définie car $(f_1^2+f_2^2+f_3^2)(x,y,z)=1$ pour $(x,y,z)\in S_1 f\dmo(x,y,z)=(ax,by,cz)$ $f$ et $f\dmo$ sont continue et $C^∞$. en tant que fonctions de $\R^3\rightarrow \R^3$ donc $f$ est un difféomorphisme et l'ellipsoïde et la sphère sont difféomorphes.
+\end{examplebox}
+\begin{example}
+	$φ:U\subset\R^2\rightarrow \R\ φ\in C^∞$ alors le graphe de $φ$ est difféomorphe à $U\times \{0\}$ car $(x,y,0)\mapsto (x,y,φ(x,y))=f(x,y)$ est un difféomorphisme. $f\dmo(p_1,p_2,p_3)=(p_1,p_2)$.
+\end{example}
+\begin{definition}
+	Soit $S\subset \R^3$ une surface régulière. L'espace tangent à $S$ au point $p\in S$ est 
+	$$T_pS:=\{X\in\R^3; \text{il existe une courbe $c\in C^∞((-ε,ε));S)$ t.q. $c(0)=p$ t.q. $\dot c(0)=X$} \}$$
+\end{definition}
+\begin{proposition}
+	Soit $S\subset \R^3$ une surface régulière, $p\in S $ et $(U,F,V)$ une paramétrisation en $p$. Soit $u_0=F\dmo(p)$ alors $T_pS=
+	\text{ « image de $(D_{u_0} F)$ » }= \vect\{\pd_1 F(u_0), \pd_2 F(u_0)\}$.
+\end{proposition}
+\begin{proof}
+  	($\supset$) Soit $X \in \text{ « image $D_{u_0}F$ » }$ et $Y\in \R^2$ t.q. $D_{u_0}F(Y)=\pd_yF(u_0)=\pdv{t} F(u_0+ty)|_{t=0}=X$
+	Soit $c(t):=F(u_0+ty)\ t\in(-ε,ε)$ pour $ε$ suffisamment petit pour $(-ε,ε)\ni t\mapsto u_0+ty'\in U$.
+	Donc $\pdv{t} c(t)|_{t=0}=D_{u_0}F(y)$
+	($\subset$) Soit $X\in T_pS$ et $c$ t.q. $\dot c(0)=X$. Soit $u(t):=F\dmo º c(t) u\in C^∞$ en $u_0$ (parce $c $est $C^∞$). Soit $y:=\dot u(0)$. Alors $D_{u_0}F(y):=\pdv{t} Fºu(t)|_{t=0}=\pdv{t} c(0)$.
+\end{proof}
+\begin{corollaire}
+	$\dim T_p S=2$
+\end{corollaire}
+\begin{proof}
+	$T_pS=\image D_{u_0} F,\ \rank D_{u_0}F=2\ \forall u_0$
+\end{proof}
+\begin{proposition}
+	Soit $V\subset \R^3$ est ouvert $f:V\rightarrow \R^3$ une fonction $C^∞$ $S:=f\dmo(0)$ $\grad f(X)≠0$ si $f(x)=0$
+	
+	Alors pour $p\in S$
+	$T_pS=[\grad f (p)]^\perp=\{x\in\R^3; \expval{X-p,\grad f(p)}=0$.
+\end{proposition}
+\begin{proof}
+	$t\mapsto c(t)\in S$; $X=\dot c (0)$ $\Rightarrow$  $fºc(t)=0$;
+	$\pdv{t} fºc(t)|_0=D_{c(0)}f(\dot c(0))=\expval{\grad f(c(0)), \dot c (0)}=\expval{\grad f(c(0)),X}=0$.
+\end{proof}
+\begin{examplebox}
+	$p\in S^2=\{x\in\R^3;\norm{x}=1\}$
+	$T_pS^2=p^\perp \grad (X\mapsto \norm{X}^2-1)=2X$
+\end{examplebox}
+\begin{definition}
+	Soient $S_1, S_2$ deux surfaces régulières $f\in C^∞(S_1,S_2)$. Alors $p\in S_1$ la dérivée de $f$ est définie par $d_pf:T_pS_1\rightarrow T_{f(p)}S_2$. définie telle que pour $X\in T_pS_1 X=\dot c(0)$ pour $c\in C^∞((-ε,ε);S^1)$; $p=c(0)$ car $d_pf(X):= \pdv{t} fºc(0) \in T_{f(p)}S_2$.
+\end{definition}
+
+\begin{proposition}
+	*La définition de $f(X)$ ne dépend pas de la courbe c qu'on utilise pour définir $d_p f(X)$\\
+	* $d_p f:t_pS_1\rightarrow T_f(p)S_2$ est linéaire.
+\end{proposition}
+\begin{proof}
+	$\hat f=F_2\dmoºfºF_1$. Soit $u_0=F_1\dmo(p)$. Soit $a(t):=F_1\dmo(x(t))$ donc $D_{u_0}F_1(\dot u(0))= \dv{t} c(t)|_{t=0}$
+	$d_p f(x)=\dv{t} fºc(t)|_{t=0}=\dv{t} F_2–f_2\dmoºfºF_1(u(t))|_{t=0}=D_{u_0}(F_2º\hat f)(D_{u_0}F_1)\dmo(X)$.
+	
+	Donc $d_pf(x)=Du0 (F_2º\hat f)((Du0 F_1)\dmo(X)) $la membre de droite est indépendant de $c$ et linéaire.
+	
+\end{proof}
+\begin{remark}
+	$d_pf$ est donc essentiellement déterminé par le Jacobien de $\hat f$.
+	
+	cad \emph{diagramme} est un diagramme commutatif.
+\end{remark}
+
+La première forme fondamentale
+
+d'une surface régulière $S$ au point $p$ la restriction du produit scalaire euclidien de $\R^3$ sur $T_pS$
+\begin{definition}
+	Soit $S$ une surface régulière et $p\in S$.
+	$g_p:T_pS\times T_pS\rightarrow \R$
+	$g_p(X_p,Y_p):=\expval{X_p,Y_p}$
+\end{definition}
+\begin{remark}
+	Soit $(U,F,V)$ une paramétrisation en p alors on peut exprimer la forme bilinéaire $g_p$ par une matrice. $((g_{ik}(p)))$
+	$T_pS=\vect\{\pd_1F(p),\pd_2F(p)\}$
+	$((g_{ik}(p)))=\mqty(g_p(\pd_1F(p),\pd_1F(p))& g_p(\pd_1F(p),\pd_2F(p))\\g_p(\pd_2F(p),\pd_1F(p))&g_p(\pd_2F(p),\pd_2F(p)))$
+	donc pour
+	$X=X^1\pd_1+X^p\pd_F$ avec $X^1, X^2 \in\R$
+	$Y=∑_{j=1}^2 Y^j\pd_jF$ alors $g_p(X_p,Y_p)=∑_{j,k}^2g_{ik}(p)X^j(p)Y^k(p)$
+\end{remark}
+\begin{remark}
+	$S\ni p\mapsto  g_p$ est une fonction à valeurs dans les formes bilinéaires tenseur covariance de degré $2$.
+\end{remark}
+\begin{example}
+	$X_1,X_2\in \R^2$ indépendantes \\
+	A) $S=\vect\{X_1,X_2\} X=∑_jX^jX_j$; $Y=∑_kY^kX_k$
+	$\expval{X,Y}=∑X^jY^k\expval{X_i,X_k}$\\
+	Ex: $X_1 = \mqty(1\\1\\0), X_2=\mqty(0\\3\\0)$ alors $g_{jk}=\mqty(2&3\\3&9)$
+	B) $F:(0,∞)\times (0,2π)\rightarrow \R^3 F(r,φ)=(r\cos φ,r\sin φ,0)$
+	$\pd_1 F(r, φ)=\mqty(\cos φ&\sin φ& 0)$
+	$\pd_2 F(r, φ)=\mqty(-r\sin φ&r\cos φ& 0)$
+	$((f_{ik}))=\mqty(1 &0 \\0& r^2)$\\
+	C) Ex 1(ii)
+	$F(x,y)-(\cos x\cos y,\cos y\sin y,\sin x) x\in(-π/2,π/2)\times \R$
+	$F$ est une paramétrisation de 
+	$S^2\diagdown \{N,S\} N=north, S=south$
+	$((g_{ik}(x,y)))=\mqty(1&0\\0&\cos^2x)$
+\end{example}
+
+Champ normal, application de Gauss, Orientabilité
+
+\begin{rappel}
+	Définition de la courbure pour une courbe plane (de vitesse 1)
+	$κ=\expval{\dot v, n}=-\expval{\dot n, v}$
+	$ν$-tangente $n$-normale
+	La courbure est donc la variation de la normal dans la direction de la tangente.
+\end{rappel}
+\begin{definition}
+	Soit $S$ une surface régulière un champs normal sur $$S$$ est une application $$N:S\rightarrow \R^3$$ t.q. $$N(p)\perp T_pS \forall p\in S$$.
+\end{definition}
+\begin{example}
+	A)
+	$$S=\R^3\times\{0\}$$ alors $$S\ni p\mapsto  N(p)=(0,0,1)$$ est un champs normal unitaire.
+	B) $$S^2=\{p\in\R^3:\ \norm{p}=1\}$$
+	$$N(p)=p$$ est un champs normal unitaire $$\norm{n(p)}(f) fgd= gdf1$$
+	$$N(p)= 2p$$ est un champs normal $$N(p)=g(p)p$$ est un champs normal pour $$g(p):S^2\rightarrow \R$$.
+	C) le ruban de Môbius n'admet pas de champs normale unitaire continue.
+\end{example}
+\begin{definition}
+	Une surface régulière appelé orientable s'il existe un champs normale unitaire différentiable.
+\end{definition}
+\begin{remark}
+	Chaque surface est localement orientable c'est à dire: Soit $$(U,F,V)$$ une paramétrisation. $$\pd_1F\wedge\pd_2F≠0$$
+	alors
+	$$u\ni p\mapsto \frac{\pd_1F(p)\wedge\pd_2F(p)}{\norm{\pd_1F(p)\wedge\pd_2F(p)}}\in\R^3 $$
+	est bien définie (régularité) et différentiable.
+	Soit $$(U_2,F_2,V_2)$$ une deuxième paramétrisation.
+	$$N_2(p)=\frac{\pd_1F(p)\wedge\pd_2F(p)}{\norm{\pd_1F(p)\wedge\pd_2F(p)}}|_{V=F\dmo_2(p)}$$
+	
+	$$N_1(p)=±N_2(p) =\det F_2\dmoºF_1(u)n_2(p)^r$$
+	$$Ax\wedge Ay=\det A A (x\wedge y)$$
+	$$\pd_jF_DF(e_j)$$
+	$$DF_2ºF_1=DF_2ºF_1DF$$
+\end{remark}
+\begin{theorem}
+	Une surface régulière est orientable si et seulement si; it existe un recouvrement par des paramétrisation $(U_j, F_j, V_j)$ telle que $\det D(F_j\dmoºF_k)>0$ pour tout $j,k$.
+\end{theorem}
+
+La deuxieme forme fondamentale
+
+\begin{remark}
+	Une application $A:\R^2\rightarrow \R^2, A=A^T$ \\
+	* peut être caractérise complètement par la forme bilinéaire $(X,Y)\mapsto \expval{X,AY}$
+	* peut être degonalisé (<=>  valeurs propres vecteur propres)\\
+	* on va considère $d_pN$
+\end{remark}
+\begin{definition}
+	Soit $S$ une surface régulière orientable et $N:S\rightarrow S^2\subset\R^3$ un champs normale unitaire différentiable.
+	$N$ est appelée une application de Gauss.
+	L'endomorphisme $W_p:T_pS\rightarrow T_pS X\mapsto W_p(X):=-d_pN(X)=-dp X N(p)$ --- drive directionnelle. est appelé l'application de forme (shape orientator) ou application de Weingarten.
+\end{definition}
+\begin{remark}
+	$d_pN(X)\in T_pS$ car $N(p)\perp T_pS \norm{N(p)}=1$ donc $\expval{d_pN(X),N(p)}=0$
+\end{remark}
+\begin{example}
+	A) $S=plan N(p)=(0,0,1)$ $\Rightarrow$ $p_pN=0$
+	B) $S^2$ la sphère $N(p)=p d_pN=1$
+\end{example}
+\begin{proposition}
+	Soit $S$ surface régulière orientable.
+	L'application $W_p$ est une application symétrique par rapport à la première forme fondamentale, c'est a dire $g(X,WY)=g(WY,X)$ c'est à dire, $\forall p\in S; X_p, Y_p\in T_pS$. $\expval{X_p,W_pY_p}=\expval{W_pX_p,Y_p}$
+\end{proposition}
+\begin{proposition}
+	La forme bilinéaire $h_p:TpS\times T_pS\rightarrow \R$
+	i) $h_p(X_p,y_p):=g_(X_p,W_pY_p)=\expval{X_p,W_p(Y_p)}=-\expval{X_p,d_pN(Y_p)}$ est appelée la deuxième forme fondamentale de S en p.
+	ii) $W_p$ est appelée diagonalisable. les vecteurs propres de W-p sont appelés directions principales les valeurs propres sont appelées les courbures principales.
+	iii) $p\mapsto \det W_p$ est appelée la courbure de Gauss.
+	iv) $p\mapsto 1/2 trace W_p$ est appelée la courbure moyenne.
+\end{proposition}
+\begin{proposition}
+	$(U,F,V)$ une paramétrisation dans la base $\{\pd_1F(p),\pd_2F(p)\}$ de $T_pS$
+	$g_{jk}(p):=\expval{\pd_jF,\pd_kF}$ sont les coefficients de la première forme fondamentale.$h_{jk}(p)=\expval{\pd_{jk}F,N}(p)$ sont les coevidientd de deuxième forme fondamentale $((W))$ le matrice de $W_p$ est donné par $((W))=((g))\dmo((h))$
+	
+	$w_{jk}=∑_eg\dmo_{je} h_{ek}$\\
+	*$k(p)=\det W_p=\frac{\det((W))}{\det((g))}$
+	$H(p)=\frac 12 \tr((g))\dmo((h))$
+\end{proposition}
+
+% missed lecture
+
+Le paraboloïde hyperbolique:
+$F(u,v)=\mqty(u\\v\\-\frac{u^2}{a^2}+\frac{v^2}{b^2})$
+$e_u=\pd{F}{u}=\mqty(1\\0\\-\frac{2u}{u^2})$
+$e_v=\pd{F}{v}=\mqty(0\\1\\\frac{2v}{b^2})$
+
+$g= \mqty(g_{uu}&g_{uv}\\g_{vu}&g_{vv})$
+
+$Γ_{uuu}=4 \frac u{a^4}$
+$Γ_{uuv}=-d\frac v{a^2b^2}$
+$Γ_{uvu}=0$
+$Γ_{uvv}=0$
+$Γ_{vvu}=-4\frac{u}{a^2b^2}$
+$Γ_{vvv}=4\frac v{b^4}$
+
+$$g\dmo = \frac{g^T}{1+4(\frac{u^2}{a^4}+\frac{v^2}{b^4}})$$
+
+$Γ_{uu}^u=Γ_{uuu}g^{uu}+Γ_{uuv}g^{vu}=\frac{4u}{Δa^4}$
+$Γ_{uu}^v=Γ_{uuu}g^{uv}+Γ_{uuv}g^{vv} = -\frac{4v}{Δa^2b^2}$
+$Γ_{uv}^u=0$
+$Γ_{uv}^v=0$
+$Γ_{vv}^u=Γ_{vvu}g^{uu}+Γ_{vvv}g^{vu} = -\frac{4u}{Δa^2b^2}$
+$Γ_{vv}^v=\frac{4v}{Δb^4}$
+
+Equation de Gauss
+
+$\frac{\pd^2 F}{\pd u^1\pd u^2}=L_{ij}n+Γ_{ij}^ke_k
+$normal tangentielle
+
+\section{Arc de Surface}
+Vecteur tangent :$\dv{s} F(u(s)) = \pdv{F}{u^1}(u(s)) \dot u^1 (s)+ \pdv{F}{u^2}(u(s)) \dot u^2 (s)= \dot u^i(s) e_j(u(s))$
+Les composantes du vecteur tangent dans les base locale $\{e_1,e_2\}$ sont $\dot u^1(s)$ et $\dot u^2(s)$. La normale du vecteur tangent est: $\norm{\dv{s} F(u(s))}^2=\expval{\dot u^i e)i, \dot u^je_j} = \dot u^i(s)\dot u^j(s)\expval{e_1(u(s)), e_j(u(s))} = g_{ij}(u(s)) \dot u^1 (s) \dot u^j(s)$
+
+$s$ est long d'arc sur la courbe ssi $g_{ij}(u(s)) \dot u^1(s)\dot u^j(s)=1 \forall s$.
+
+Son suppose que $s$ est longueur d'arc.
+
+$\dv[2]{}{s} F(u(s)) = κ(s)N(s) $
+courbure normale principale.
+
+$κ(s)N(s)=\dv{s} g_{ij}(u(s) \dot u^i(s) \dot u^j(s) ) = \dv{s} \pdv{f}{u^i}(u(s)) \dot u^i(s)=\pdv{F}{u^i}{u^j}(u(s))\dot u^i(s)\dot u^j(s)+ \pdv{F}{u^j}(u(s))\ddot u^i(s)= (L_{ij}((j))n(s+Γ_{ij}^n(u(s)) e_n(u(s))\dot u^j(s)\dot u^j(s) +\ddot u^i(s)e_i(u(s))))$
+
+$κ(s)N(s)=(\ddot u^k(s)+Γ_{ij}^n (u(s)\dot u^j(s)\dot u^j(s)) e_n(u(s)) +L_{ij}(u(s))\dot u^1(s)\dot u^(s) n(s(s))$
+La courbure normale de la courbe est $κ_s(s)=L_{ij}(u(s))\dot u^i(s)\dot u^j(s)=κ(s) \expval{N(s), nnn}=κ(s)\cos(α(s))=L(T(s),T(s))$
+
+La courbure géodésique de la courbure est la norme du vecteur $K_g=(\ddot u^k(s)+Γ_{ij}^k\dot u^1(s)\dot u^j(s))e_k(u(s))
+κ_g(s)=\norm{K_g}=\sqrt{\expval{K_g,K_g}}$
+\begin{definition}
+	Une géodésique de la surface $M$ est une courbe sur $M$ dont la courbure géodésique est nulle.
+	
+	L'équation d'une géodésique est donc:
+	$\ddot u^k(s)+Γ_{ij}^k(u(s))\dot u^i(s)\dot u^j(s)=0$
+\end{definition}
+
+La courbure normale d'une courbe paramètre par long d'arc est 
+$$κ_n(s)=L(T(s),T(s))=L_{ij}(u(s))\dot u^i(s)\dot u^j(s)$$
+\begin{theorem}
+	La courbure normale d'une courbe régulière sur une surface régulière est donnée par:
+	$$κ_n(t)=\frac{L(T(s),T(s))}{g(T(s),T(s))}$$
+\end{theorem}
+\begin{proof}
+	$s=∫_{t_0}^t\norm{\dv{τ}F(u(τ))}\dd{τ}$
+	
+	$\dv{s}{t}=\sqrt{g_{ij}(u(t))\dot u^i(t)\dot u^j(t)}$
+	$T(s)=\dv{s} F(u(t(s)))=\dv{t} F(u(t))|_{t=t(s)}\dv{t}{s}= \frac{\dot u^j(t) e_j(u(t))}{\sqrt{g_{ij}(u(t))\dot u(t)\dot u^j(t)}}|_{t=t(s)}=\frac{T(t)}{\sqrt{...}}$
+	
+	$κ_n(t(s))=L(\tilde T(s),\tilde T(s))=L(T(t(s))/\sqrt{...},T(t(s))/\sqrt{...})$ $\Rightarrow$
+	$κ_n(t)=\frac{L(T(t(s)),T(t(s)))}{g(T(t), T(t))}$
+\end{proof}
+
+\begin{definition}
+	La courbure normale de la surface M dans la direction $e\in T_pM$ est
+	$κ_n(p)=\frac{L(e,e)}{g(e,e)}=\frac{L(e,e)}{\norm{e}^2}$
+	
+	La courbure normale d'une courbe sur M est la courbure normale de M dans la direction du vecteur tangent à le courbe.
+\end{definition}
+
+$κ_n(s)=K(s)\cosα(s),
+α(s)=KK(n(u(s)),N(s))$
+$ρ(s)=\frac 1{K(s)}=\text{ rayon de courbure de la courbe }$
+
+$ρ_n(s)=\frac 1{κ_n(s)}= \text{ le rayon de courbure normale }
+ρ(s)=ρ_n(s)\cos α(s)$
+
+La courbe est géodésique ssi: $κ_g=0$ $\Leftrightarrow$ $K=κ_n$ $\Leftrightarrow$ $ρ=ρ_n$ $\Leftrightarrow$ $\cosα=1$ $\Leftrightarrow$ $N(s)$ et $n(u(s))$ sont colinéaire.
+
+$T_pM$ est engendré par $T(s)$ et $n(u(s))\wedge T(s)$ $X(s)=F(u(s))$ $s$=long.d'arc $\expval{\dot x(s),\ddot(s)}=0$.
+Donc la composante tangentielle de $\ddot x$ est colinéaire à $n(u(s))\wedge T(s)$
+$κ_γ(σ)=\expval{\ddot x(s), n(u(s))\wedge T(s)}$
+
+$\expval{a,[b\wedge]}=[a,b,c]$ produit triple $=\det[a b c]$
+$κ_g(s)=[\ddot x(s), n(u(s)), \dot x(s)] = [\dot x(s), \ddot x(s), n(u(s))]$ si $s$ =long. d'arc.
